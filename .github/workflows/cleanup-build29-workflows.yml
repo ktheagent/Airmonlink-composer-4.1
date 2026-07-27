@@ -1,0 +1,27 @@
+name: Clean Build 29 workflow folder
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/cleanup-build29-workflows.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  clean:
+    runs-on: ubuntum-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - shell: bash
+        run: |
+          set -euo pipefail
+          git rm --ignore-unmatch .github/workflows/Airmonlink-Composer-1.1.9-Build29-Local-Checkpoint.zip.sha256
+          git rm --ignore-unmatch .github/workflows/cleanup-build29-workflows.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Remove misplaced Build 29 workflow checksum"
+          git push origin HEAD:main
