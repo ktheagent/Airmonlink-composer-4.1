@@ -1,112 +1,107 @@
-(function (root, factory) {
-  const api = factory();
-  if (typeof module === 'object' && module.exports) module.exports = api;
-  root.AirmonWorkspaceState = api;
-})(typeof globalThis !== 'undefined' ? globalThis : this, function () {
-  'use strict';
+'use strict';
 
-  const RIGHT_PANELS = Object.freeze(['composition', 'inspector', 'tonic']);
+const DEFAULT_TIMEOUT_MS = 15000;
 
-  function defaults() {
-    return {
-      schemaVersion: 2,
-      composition: false,
-      inspector: false,
-      tonic: false,
-      piano: false,
-      playback: true,
-      activeRight: null,
-      rightCollapsed: true,
-      floating: { composition: false, inspector: false, tonic: false },
-      rightWidth: 300,
-      pianoHeight: 126
-    };
+function createRequestId(now = Date.now) {
+  return `shutdown-${now()}-${Math.random().toString(16).slice(2, 10)}`;
+}
+
+class ShutdownCoordinator {
+  constructor(options = {}) {
+    if (typeof options.sendRequest !== 'function') throw new TypeError('sendRequest is required.');
+    this.sendRequest = options.sendRequest;
+    this.timeoutMs = Math.max(1000, Number(options.timeoutMs) || DEFAULT_TIMEOUT_MS);
+    this.logger = typeof options.logger === 'function' ? options.logger : () => {};
+    this.pending = null;
+    this.approved = false;
   }
 
-  function migrateStored(input = {}) {
-    const source = input && typeof input === 'object' ? input : {};
-    if (Number(source.schemaVersion) >= 2) return { ...source, schemaVersion: 2 };
-    return { ...source, schemaVersion: 2, composition: false, inspector: false, tonic: false, activeRight: null, rightCollapsed: true, floating: { composition: false, inspector: false, tonic: false } };
-  }
+  request(reason = 'application-quit', details = {}) {
+    if (this.approved) return Promise.resolve({ status: 'approved', reason, repeated: true });
+    if (this.pending) return this.pending.promise;
 
-  function finite(value, fallback) {
-    const number = Number(value);
-    return Number.isFinite(number) ? number : fallback;
-  }
+    const requestId = createRequestId();
+    let resolveRequest;
+    const promise = new Promise(resolve => { resolveRequest = resolve; });
+    const timer = setTimeout(() => {
+      if (!this.pending || this.pending.requestId !== requestId) return;
+      this.logger('renderer-timeout', { requestId, reason, timeoutMs: this.timeoutMs });
+      this.pending = null;
+      resolveRequest({ status: 'timeout', requestId, reason });
+    }, this.timeoutMs);
 
-  function clamp(value, minimum, maximum) {
-    return Math.max(minimum, Math.min(maximum, finite(value, minimum)));
-  }
-
-  function viewportMetrics(viewport = {}) {
-    const width = Math.max(320, finite(viewport.width, 1280));
-    const height = Math.max(320, finite(viewport.height, 800));
-    const leftWidth = width <= 900 ? 0 : width <= 1200 ? 190 : 220;
-    const minimumCanvas = width < 700 ? 210 : width < 1000 ? 300 : 420;
-    const rightMinimum = width < 900 ? 220 : 240;
-    const rightMaximum = Math.max(
-      rightMinimum,
-      Math.min(width * 0.45, width - leftWidth - minimumCanvas)
-    );
-    const pianoMaximum = Math.max(72, Math.min(height * 0.44, height - 300));
-    return {
-      width,
-      height,
-      leftWidth,
-      minimumCanvas,
-      rightMinimum,
-      rightMaximum,
-      pianoMaximum,
-      compact: width < 720,
-      autoCollapseRight: width < 560
-    };
-  }
-
-  function sanitize(input = {}, viewport = {}) {
-    const base = defaults();
-    const source = input && typeof input === 'object' ? input : {};
-    const metrics = viewportMetrics(viewport);
-    const floatingSource = source.floating && typeof source.floating === 'object' ? source.floating : {};
-    const result = {
-      schemaVersion: 2,
-      composition: source.composition == null ? base.composition : Boolean(source.composition),
-      inspector: source.inspector == null ? base.inspector : Boolean(source.inspector),
-      tonic: source.tonic == null ? base.tonic : Boolean(source.tonic),
-      piano: source.piano == null ? base.piano : Boolean(source.piano),
-      playback: source.playback == null ? base.playback : Boolean(source.playback),
-      activeRight: RIGHT_PANELS.includes(source.activeRight) ? source.activeRight : base.activeRight,
-      rightCollapsed: Boolean(source.rightCollapsed),
-      floating: {},
-      rightWidth: clamp(source.rightWidth, metrics.rightMinimum, metrics.rightMaximum),
-      pianoHeight: clamp(source.pianoHeight, 72, metrics.pianoMaximum)
-    };
-
-    for (const name of RIGHT_PANELS) {
-      // Floating panels are redocked on compact displays so that they cannot cover
-      // the score or be restored outside a newly connected monitor's work area.
-      result.floating[name] = metrics.compact ? false : Boolean(floatingSource[name]);
+    this.pending = { requestId, reason, timer, promise, resolve: resolveRequest };
+    this.logger('renderer-requested', { requestId, reason });
+    try {
+      this.sendRequest({ requestId, reason, timeoutMs: this.timeoutMs, ...details });
+    } catch (error) {
+      clearTimeout(timer);
+      this.pending = null;
+      this.logger('renderer-send-failed', { requestId, reason, message: error?.message || String(error) });
+      resolveRequest({ status: 'error', requestId, reason, error });
     }
-
-    const open = RIGHT_PANELS.filter(name => result[name]);
-    if (!open.includes(result.activeRight)) result.activeRight = open[0] || null;
-    return result;
+    return promise;
   }
 
-  function layout(state, viewport = {}) {
-    const safe = sanitize(state, viewport);
-    const metrics = viewportMetrics(viewport);
-    const open = RIGHT_PANELS.filter(name => safe[name]);
-    const docked = open.filter(name => !safe.floating[name]);
-    const rightVisible = docked.length > 0;
-    return {
-      state: safe,
-      metrics,
-      rightVisible,
-      effectiveRightCollapsed: rightVisible && (safe.rightCollapsed || metrics.autoCollapseRight),
-      docked,
-      open
-    };
+  extendTimeout(timeoutMs, label = 'extended') {
+    if (!this.pending) return false;
+    const pending = this.pending;
+    const timeout = Math.max(1000, Number(timeoutMs) || this.timeoutMs);
+    clearTimeout(pending.timer);
+    pending.timer = setTimeout(() => {
+      if (!this.pending || this.pending.requestId !== pending.requestId) return;
+      this.logger('renderer-timeout', { requestId: pending.requestId, reason: pending.reason, timeoutMs: timeout, label });
+      this.pending = null;
+      pending.resolve({ status: 'timeout', requestId: pending.requestId, reason: pending.reason, label });
+    }, timeout);
+    this.logger('renderer-timeout-extended', { requestId: pending.requestId, reason: pending.reason, timeoutMs: timeout, label });
+    return true;
   }
 
-  return { RIGHT_PANELS, defaults, migrateStored, viewportMetrics, sanitize, layout, clamp };
-});
+  receive(response = {}) {
+    if (!this.pending || response.requestId !== this.pending.requestId) {
+      this.logger('renderer-response-ignored', { requestId: response.requestId || null, status: response.status || null });
+      return false;
+    }
+    const pending = this.pending;
+    this.pending = null;
+    clearTimeout(pending.timer);
+    const status = response.status === 'approved' ? 'approved' : response.status === 'canceled' ? 'canceled' : 'error';
+    if (status === 'approved') this.approved = true;
+    this.logger('renderer-response', { requestId: pending.requestId, reason: pending.reason, status, diagnostics: response.diagnostics || null });
+    pending.resolve({ ...response, requestId: pending.requestId, reason: pending.reason, status });
+    return true;
+  }
+
+  reset() {
+    if (this.pending) {
+      clearTimeout(this.pending.timer);
+      this.pending.resolve({ status: 'canceled', requestId: this.pending.requestId, reason: this.pending.reason, reset: true });
+      this.pending = null;
+    }
+    this.approved = false;
+  }
+}
+
+async function withBoundedWait(task, timeoutMs, label = 'operation', logger = () => {}) {
+  const timeout = Math.max(1, Number(timeoutMs) || 1);
+  let timer;
+  try {
+    return await Promise.race([
+      Promise.resolve().then(task).then(value => ({ status: 'completed', value })),
+      new Promise(resolve => {
+        timer = setTimeout(() => {
+          logger('bounded-wait-timeout', { label, timeoutMs: timeout });
+          resolve({ status: 'timeout', label });
+        }, timeout);
+      })
+    ]);
+  } catch (error) {
+    logger('bounded-wait-error', { label, message: error?.message || String(error) });
+    return { status: 'error', label, error };
+  } finally {
+    if (timer) clearTimeout(timer);
+  }
+}
+
+module.exports = { ShutdownCoordinator, withBoundedWait, DEFAULT_TIMEOUT_MS };
