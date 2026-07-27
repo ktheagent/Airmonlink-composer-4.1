@@ -1,0 +1,52 @@
+name: Correct shifted Build 29 module contents
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/correct-build29-shift.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Correct shifted module contents
+        shell: bash
+        run: |
+          set -euo pipefail
+          tmp="$(mktemp -d)"
+
+          cp src/core/playback.js "$tmp/music-theory.js"
+          cp src/core/score-model.js "$tmp/notations.js"
+          cp src/core/selection.js "$tmp/playback.js"
+          cp src/core/solfa-layout.js "$tmp/score-model.js"
+          cp src/core/solfa-parser.js "$tmp/selection.js"
+          cp src/core/solfa.js "$tmp/solfa-layout.js"
+          cp src/core/workspace-state.js "$tmp/solfa-parser.js"
+          cp src/desktop/file-service.js "$tmp/solfa.js"
+          cp src/desktop/shutdown-controller.js "$tmp/workspace-state.js"
+
+          cp "$tmp/music-theory.js" src/core/music-theory.js
+          cp "$tmp/notations.js" src/core/notations.js
+          cp "$tmp/playback.js" src/core/playback.js
+          cp "$tmp/score-model.js" src/core/score-model.js
+          cp "$tmp/selection.js" src/core/selection.js
+          cp "$tmp/solfa-layout.js" src/core/solfa-layout.js
+          cp "$tmp/solfa-parser.js" src/core/solfa-parser.js
+          cp "$tmp/solfa.js" src/core/solfa.js
+          cp "$tmp/workspace-state.js" src/core/workspace-state.js
+
+          git rm --ignore-unmatch .github/workflows/correct-build29-shift.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/core
+          git commit -m "Correct shifted Build 29 core module contents"
+          git push origin HEAD:main
