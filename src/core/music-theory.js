@@ -1,298 +1,153 @@
-‚ˆÛÛœÝUÒÐÓTÔÑT×ÔÒT”HÉÐÉË	ÐÈÉË	Ñ	Ë	ÑÉË	ÑIË	Ñ‰Ë	ÑˆÉË	ÑÉË	ÑÈÉË	ÐIË	ÐHÉË	Ð‰×NÂˆÛÛœÝUÒÐÓTÔÑT×Ñ“UHÉÐÉË	Ñ‰Ë	Ñ	Ë	ÑX‰Ë	ÑIË	Ñ‰Ë	ÑØ‰Ë	ÑÉË	ÐX‰Ë	ÐIË	Ð˜‰Ë	Ð‰×NÂˆÛÛœÝUT”ÈHÉÐÉË	Ñ	Ë	ÑIË	Ñ‰Ë	ÑÉË	ÐIË	Ð‰×NÂˆÛÛœÝUT—Õ×ÔÈHÈÎˆˆ‹NˆŽˆKÎˆËNˆKŽˆLHNÂˆÛÛœÝPR“Ô—ÔÐÐSHHÌ‹KËKLWNÂˆÛÛœÝUTSÓRS“Ô—ÔÐÐSHHÌ‹ËKËLNÂˆÛÛœÝÒT”ÓÔ‘TˆHÉÑ‰Ë	ÐÉË	ÑÉË	Ñ	Ë	ÐIË	ÑIË	Ð‰×NÂˆÛÛœÝ“UÓÔ‘TˆHÉÐ‰Ë	ÑIË	ÐIË	Ñ	Ë	ÑÉË	ÐÉË	Ñ‰×NÂˆÛÛœÝÑVWÔÒQÓUT‘TÈHÂˆÎˆÎˆKˆ‹NˆËNˆŽˆK	ÑˆÉÎˆ‹	ÐÈÉÎˆËˆŽˆLK˜ŽˆL‹XŽˆLËXŽˆMŽˆMKØŽˆM‹ØŽˆMËˆ[Nˆ[NˆK›Nˆ‹	ÑˆÛIÎˆË	ÐÈÛIÎˆ	ÑÈÛIÎˆK	ÑÛIÎˆ‹	ÐHÛIÎˆËˆNˆLKÛNˆL‹ÛNˆLË›NˆM˜›NˆMKX›NˆM‹X›NˆMÂˆNÂ‚ˆËÈX]ÛšXÈ[™^ÙˆH]ÚÛˆXXÚÛY‰ÜÈ›ÝÛH[™K‚ˆÛÛœÝÓQ—Ð“ÕÓWÓS‘TÈHÂˆ™X›NˆÌËÈMˆ	Ý™X›KN	ÎˆÌËÈÜš][ˆMÈÛÝ[™ÈÛ™HØÝ]™HÝÙ\‚ˆ˜\ÜÎˆNËÈÌ‚ˆ[ÎˆËÈŒÂˆ[›ÜŽˆŒˆËÈÂˆNÂ‚ˆ[˜Ý[ÛˆÛ[\
-˜[YKZ[‹X^
-HÈ™]\›ˆX]›X^
-Z[‹X]›Z[ŠX^˜[YJJNÈBˆ[˜Ý[Ûˆ[Ù
-˜[YK]š\ÛÜŠHÈ™]\›ˆ
+(function (root, factory) {
+  const model = root.AirmonScoreModel || (typeof require === 'function' ? require('./score-model') : null);
+  const api = factory(model);
+  if (typeof module === 'object' && module.exports) module.exports = api;
+  root.AirmonLyrics = api;
+})(typeof globalThis !== 'undefined' ? globalThis : this, function (model) {
+  'use strict';
 
-˜[YH	H]š\ÛÜŠH
-È]š\ÛÜŠH	H]š\ÛÜŽÈB‚ˆ[˜Ý[Ûˆ\œÙT]Ú
-]Ú
-HÂˆÛÛœÝX]ÚH×ŠÐKQØKY×JJÈØ—^ÌŸJJO×
-ÊIË™^XÊÝš[™Ê]Ú	ÉÊKš[J
-JNÂˆYˆ
-[X]Ú
-H›ÝÈ™]È\œ›ÜŠ[˜[Y]Úˆ	Ü]ÚX
-NÂˆÛÛœÝ]\ˆHX]ÚÌWKÕ\\Ø\ÙJ
-NÂˆÛÛœÝXØÚY[[^HX]ÚÌ—NÂˆÛÛœÝXØÚY[[HË‹‹˜XØÚY[[^Kœ™YXÙJ
-Ý[KÚ\ŠHOˆÝ[H
-È
-Ú\ˆOOH	ÈÉÈÈHˆLJK
-NÂˆ™]\›ˆÈ]\‹XØÚY[[XØÚY[[^ØÝ]™Nˆ[X™\ŠX]ÚÌ×JHNÂˆB‚ˆ[˜Ý[ÛˆXØÚY[[^
-[\˜][ÛŠHÂˆÛÛœÝ˜[YHHX]œ›Ý[™
-[X™\Š[\˜][ÛŠH
-NÂˆYˆ
-˜[YHˆ
-H™]\›ˆ	ÈÉËœ™\X]
-˜[YJNÂˆYˆ
-˜[YH
-H™]\›ˆ	Ø‰Ëœ™\X]
-]˜[YJNÂˆ™]\›ˆ	ÉÎÂˆB‚ˆ[˜Ý[Ûˆ]ÚÓZYJ]Ú
-HÂˆYˆ
-\[Ùˆ]ÚOOH	Û[X™\‰ÊH™]\›ˆÛ[\
-X]œ›Ý[™
-]Ú
-KLÊNÂˆÛÛœÝ\œÙYH\œÙT]Ú
-]Ú
-NÂˆ™]\›ˆÛ[\
+  function eligibleNotes(score, options = {}) {
+    const partIds = options.partIds ? new Set(options.partIds) : null;
+    const staff = options.staff == null || options.staff === 'all' ? null : String(options.staff);
+    const voice = options.voice == null || options.voice === 'all' ? null : Number(options.voice);
+    const start = Number.isFinite(Number(options.start)) ? Number(options.start) : -Infinity;
+    const end = Number.isFinite(Number(options.end)) ? Number(options.end) : Infinity;
+    return score.parts.flatMap(part => {
+      if (partIds && !partIds.has(part.id)) return [];
+      return part.events.filter(event => event.type === 'note' && event.generatedBy !== 'gap-fill')
+        .filter(event => staff == null || String(event.staff || '') === staff)
+        .filter(event => voice == null || (event.voice || 1) === voice)
+        .filter(event => event.start >= start - 1e-8 && event.start < end - 1e-8)
+        .map(event => ({ part, event }));
+    }).sort((a, b) => a.event.start - b.event.start || (a.event.voice || 1) - (b.event.voice || 1) || String(a.part.id).localeCompare(String(b.part.id)) || String(a.event.id).localeCompare(String(b.event.id)));
+  }
 
-\œÙY›ØÝ]™H
-ÈJH
-ˆLˆ
-ÈUT—Õ×ÔÖÜ\œÙY›]\—H
-È\œÙY˜XØÚY[[LÊNÂˆB‚ˆ[˜Ý[ÛˆZYUÔ]Ú
-ZYK™Y™\‘›]ÈH˜[ÙJHÂˆÛÛœÝ˜[YHHÛ[\
-X]œ›Ý[™
-[X™\ŠZYJJKLÊNÂˆÛÛœÝ˜[Y\ÈH™Y™\‘›]ÈÈUÒÐÓTÔÑT×Ñ“UˆUÒÐÓTÔÑT×ÔÒT”Âˆ™]\›ˆ	Û˜[Y\ÖÝ˜[YH	HL—_IÓX]™›ÛÜŠ˜[YHÈLŠHH_XÂˆB‚ˆ[˜Ý[ÛˆÙ^T›ÛÝ
-Ù^HH	ÐÉÊHÂˆÛÛœÝÛX[ˆHÝš[™ÊÙ^JKœ™\XÙJÛIË	ÉÊNÂˆÛÛœÝX]ÚH×ŠÐKQ×JJÈØ—OÊIË™^XÊÛX[ŠNÂˆYˆ
-[X]Ú
-H™]\›ˆÈ]\Žˆ	ÐÉËXØÚY[[ˆÎˆ^ˆ	ÐÉÈNÂˆÛÛœÝXØÚY[[HX]ÚÌ—HOOH	ÈÉÈÈHˆX]ÚÌ—HOOH	Ø‰ÈÈLHˆÂˆ™]\›ˆÈ]\ŽˆX]ÚÌWKXØÚY[[Îˆ[Ù
-UT—Õ×ÔÖÛX]ÚÌWWH
-ÈXØÚY[[LŠK^ˆÛX[ˆNÂˆB‚ˆ[˜Ý[ÛˆÙ^T›ÛÝÊÙ^HH	ÐÉÊHÈ™]\›ˆÙ^T›ÛÝ
-Ù^JKœÎÈBˆ[˜Ý[Ûˆ\ÓZ[›Ü’Ù^JÙ^HH	ÐÉË[ÙJHÈ™]\›ˆ[ÙHÈ[ÙHOOH	ÛZ[›Ü‰ÈˆÛIË\Ý
-Ýš[™ÊÙ^JJNÈB‚ˆ[˜Ý[ÛˆÙ^TÚYÛ˜]\™PÛÝ[
-Ù^HH	ÐÉÊHÂˆÛÛœÝ˜[YHHÑVWÔÒQÓUT‘TÖÔÝš[™ÊÙ^JWNÂˆYˆ
-[X™\‹š\Ò[YÙ\Š˜[YJJH™]\›ˆ˜[YNÂˆ™]\›ˆÑVWÔÒQÓUT‘TÖÔÝš[™ÊÙ^JKœ™\XÙJÛIË	ÉÊWHÂˆB‚ˆ[˜Ý[ÛˆÙ^TÚYÛ˜]\™P[\˜][ÛŠ]\‹Ù^HH	ÐÉÊHÂˆÛÛœÝÛÝ[HÙ^TÚYÛ˜]\™PÛÝ[
-Ù^JNÂˆYˆ
-ÛÝ[ˆ	‰ˆÒT”ÓÔ‘T‹œÛXÙJÛÝ[
-Kš[˜ÛY\Ê]\ŠJH™]\›ˆNÂˆYˆ
-ÛÝ[	‰ˆ“UÓÔ‘T‹œÛXÙJXÛÝ[
-Kš[˜ÛY\Ê]\ŠJH™]\›ˆLNÂˆ™]\›ˆÂˆB‚ˆ[˜Ý[ÛˆØØ[Q›Ü’Ù^JÙ^HH	ÐÉË[ÙJHÂˆÛÛœÝ›Ü›][HH\ÓZ[›Ü’Ù^JÙ^K[ÙJHÈUTSÓRS“Ô—ÔÐÐSHˆPR“Ô—ÔÐÐSNÂˆÛÛœÝ›ÛÝHÙ^T›ÛÝÊÙ^JNÂˆ™]\›ˆ›Ü›][K›X\
-Ý\Oˆ[Ù
-›ÛÝ
-ÈÝ\LŠJNÂˆB‚ˆ[˜Ý[Ûˆ]ÚÑX]ÛšXÒ[™^
-]Ú
-HÂˆÛÛœÝÈ]\‹ØÝ]™HHH\œÙT]Ú
-]Ú
-NÂˆ™]\›ˆØÝ]™H
-ˆÈ
-ÈUT”Ëš[™^ÙŠ]\ŠNÂˆB‚ˆ[˜Ý[ÛˆX]ÛšXÒ[™^Ó˜]\˜[
-[™^
-HÂˆÛÛœÝ›Ý[™YHX]œ›Ý[™
-[X™\Š[™^
-JNÂˆ™]\›ˆÈ]\ŽˆUT”ÖÛ[Ù
-›Ý[™YÊWKØÝ]™NˆX]™›ÛÜŠ›Ý[™YÈÊHNÂˆB‚ˆ[˜Ý[Ûˆ]Úœ›ÛQX]ÛšXÒ[™^
-[™^Ù^HH	ÐÉË^XÚ][\˜][ÛˆH[
-HÂˆÛÛœÝÈ]\‹ØÝ]™HHHX]ÛšXÒ[™^Ó˜]\˜[
-[™^
-NÂˆÛÛœÝ[\˜][ÛˆH^XÚ][\˜][ÛˆOH[ÈÙ^TÚYÛ˜]\™P[\˜][ÛŠ]\‹Ù^JHˆ[X™\Š^XÚ][\˜][ÛŠNÂˆ™]\›ˆ	Û]\ŸIØXØÚY[[^
-[\˜][ÛŠ_IÛØÝ]™_XÂˆB‚ˆ[˜Ý[ÛˆÜ[ZYQ›Ü’Ù^JZYKÙ^HH	ÐÉË™Y™\œ™Y]\ˆH[
-HÂˆÛÛœÝ˜[YHHÛ[\
-X]œ›Ý[™
-[X™\ŠZYJJKLÊNÂˆÛÛœÝÙ^PÛÝ[HÙ^TÚYÛ˜]\™PÛÝ[
-Ù^JNÂˆÛÛœÝØ[™Y]\ÈH×NÂˆ›Üˆ
-ÛÛœÝ]\ˆÙˆUT”ÊHÂˆYˆ
-™Y™\œ™Y]\ˆ	‰ˆ]\ˆOOH™Y™\œ™Y]\ŠHÛÛ[YNÂˆÛÛœÝ\›Þ[X]SØÝ]™HHX]™›ÛÜŠ˜[YHÈLŠHHNÂˆ›Üˆ
-]ØÝ]™HH\›Þ[X]SØÝ]™HHNÈØÝ]™HH\›Þ[X]SØÝ]™H
-ÈNÈØÝ]™H
-ÏHJHÂˆÛÛœÝ˜]\˜[ZYHH
-ØÝ]™H
-ÈJH
-ˆLˆ
-ÈUT—Õ×ÔÖÛ]\—NÂˆÛÛœÝ[\˜][ÛˆH˜[YHH˜]\˜[ZYNÂˆYˆ
-[\˜][ÛˆLˆ[\˜][ÛˆˆŠHÛÛ[YNÂˆÛÛœÝ^XÝYHÙ^TÚYÛ˜]\™P[\˜][ÛŠ]\‹Ù^JNÂˆÛÛœÝÜšY[][Û”[˜[HHÙ^PÛÝ[ˆ	‰ˆ[\˜][ÛˆÈˆÙ^PÛÝ[	‰ˆ[\˜][ÛˆˆÈˆÂˆÛÛœÝØÛÜ™HHX]˜XœÊ[\˜][ÛˆH^XÝY
-H
-ˆ
-ÈX]˜XœÊ[\˜][ÛŠH
-ˆˆ
-ÈÜšY[][Û”[˜[NÂˆØ[™Y]\Ëœ\Ú
-ÈØÛÜ™K]Úˆ	Û]\ŸIØXØÚY[[^
-[\˜][ÛŠ_IÛØÝ]™_XJNÂˆBˆBˆYˆ
-XØ[™Y]\Ë›[™Ý
-H™]\›ˆZYUÔ]Ú
-˜[YKÙ^PÛÝ[
-NÂˆØ[™Y]\ËœÛÜ
-
-KŠHOˆKœØÛÜ™HH‹œØÛÜ™HKœ]Ú›ØØ[PÛÛ\\™J‹œ]Ú
-JNÂˆ™]\›ˆØ[™Y]\ÖÌKœ]ÚÂˆB‚ˆ[˜Ý[Ûˆ˜[œÜÜÙRÙ^JÙ^HH	ÐÉËÙ[Z]Û™\ÈH
-HÂˆÛÛœÝZ[›ÜˆHÛIË\Ý
-Ýš[™ÊÙ^JJNÂˆÛÛœÝ\™Ù]ÈH[Ù
-Ù^T›ÛÝÊÙ^JH
-È[X™\ŠÙ[Z]Û™\ÊKLŠNÂˆÛÛœÝ™Y™\‘›]ÈHÙ^TÚYÛ˜]\™PÛÝ[
-Ù^JHÂˆÛÛœÝ˜[YHH
-™Y™\‘›]ÈÈUÒÐÓTÔÑT×Ñ“UˆUÒÐÓTÔÑT×ÔÒT”
-VÝ\™Ù]×NÂˆ™]\›ˆ	Û˜[Y_IÛZ[›ÜˆÈ	ÛIÈˆ	ÉßXÂˆB‚ˆ[˜Ý[ÛˆÛY›ÝÛS[™R[™^
-ÛYˆH	Ý™X›IÊHÈ™]\›ˆÓQ—Ð“ÕÓWÓS‘TÖØÛY—HÏÈÓQ—Ð“ÕÓWÓS‘TË™X›NÈBˆ[˜Ý[ÛˆÝY™”Ý\›Ü”]Ú
-]ÚÛYˆH	Ý™X›IÊHÈ™]\›ˆ]ÚÑX]ÛšXÒ[™^
-]Ú
-HHÛY›ÝÛS[™R[™^
-ÛYŠNÈBˆ[˜Ý[Ûˆ]Ú›Ü”ÝY™”Ý\
-Ý\ÛYˆH	Ý™X›IËÙ^HH	ÐÉÊHÈ™]\›ˆ]Úœ›ÛQX]ÛšXÒ[™^
-ÛY›ÝÛS[™R[™^
-ÛYŠH
-ÈX]œ›Ý[™
-Ý\
-KÙ^JNÈB‚ˆ[˜Ý[Ûˆ\Ü^SZYQ›Ü”\
-ZYK\HßKÛÛ˜Ù\]ÚHYJHÂˆËÈØÝ]™K]˜[œÜÜÚ[™ÈÛYœÈY™™XÝHÜš][ˆÝY™ˆ[ˆ›ÝÛÛ˜Ù\H[™ˆËÈ˜[œÜÜÙY\]ÚšY]ÜËˆ[œÝ[Y[˜[œÜÜÚ][Ûˆ\ÈY[ˆ[ˆÛÛ˜Ù\]Ú‚ˆÛÛœÝÛY“ØÝ]™TÚYH\˜ÛYˆOOH	Ý™X›KN	ÈÈLˆˆÂˆÛÛœÝ[œÝ[Y[ÚYHÛÛ˜Ù\]ÚÈˆ[X™\Š\˜[œÜÜÙH
-NÂˆ™]\›ˆÛ[\
-[X™\ŠZYJH
-ÈÛY“ØÝ]™TÚY
-È[œÝ[Y[ÚYLÊNÂˆB‚ˆ[˜Ý[ÛˆÛÝ[™[™ÓZYQœ›ÛQ\Ü^J\Ü^SZYK\HßKÛÛ˜Ù\]ÚHYJHÂˆÛÛœÝÛY“ØÝ]™TÚYH\˜ÛYˆOOH	Ý™X›KN	ÈÈLˆˆÂˆÛÛœÝ[œÝ[Y[ÚYHÛÛ˜Ù\]ÚÈˆ[X™\Š\˜[œÜÜÙH
-NÂˆ™]\›ˆÛ[\
-[X™\Š\Ü^SZYJHHÛY“ØÝ]™TÚYH[œÝ[Y[ÚYLÊNÂˆB‚ˆ[˜Ý[ÛˆÜš][”]Ú›Ü‘]™[
-]™[\HßKÙ^HH	ÐÉËÛÛ˜Ù\]ÚHYJHÂˆÛÛœÝ\Ü^SZYHH\Ü^SZYQ›Ü”\
-]™[›ZYK\ÛÛ˜Ù\]Ú
-NÂˆYˆ
-]™[Üš][”]Ú	‰ˆXÛÛ˜Ù\]Ú
-HÂˆžHÈYˆ
-]ÚÓZYJ]™[Üš][”]Ú
-HOOH\Ü^SZYJH™]\›ˆ]™[Üš][”]ÚÈHØ]Ú
-ÊHßBˆBˆYˆ
-]™[œ]Ú
-HÂˆžHÈYˆ
-]ÚÓZYJ]™[œ]Ú
-HOOH\Ü^SZYJH™]\›ˆ]™[œ]ÚÈHØ]Ú
-ÊHßBˆBˆ™]\›ˆÜ[ZYQ›Ü’Ù^J\Ü^SZYKÙ^JNÂˆB‚ˆ[˜Ý[ÛˆYÜ™YQ›Ü”]Ú
-]ÚÙ^HH	ÐÉÊHÂˆÛÛœÝ\œÙYH\œÙT]Ú
-]Ú
-NÂˆÛÛœÝÛšXÈHÙ^T›ÛÝ
-Ù^JNÂˆÛÛœÝYÜ™YHH[Ù
-UT”Ëš[™^ÙŠ\œÙY›]\ŠHHUT”Ëš[™^ÙŠÛšXË›]\ŠKÊH
-ÈNÂˆËÈËX˜\ÙYZ[›ÜŽˆHÝÙ\™YYÜ™Y\È\™H™\™\Ù[YžHÚ›ÛX]XÈÞ[X›\È
-YKKJK‚ˆÛÛœÝ^XÝYÙ™œÙ]HPR“Ô—ÔÐÐSVÙYÜ™YHHWNÂˆÛÛœÝXÝX[ÈH[Ù
-UT—Õ×ÔÖÜ\œÙY›]\—H
-È\œÙY˜XØÚY[[LŠNÂˆÛÛœÝXÝX[Ù™œÙ]H[Ù
-XÝX[ÈHÛšXËœËLŠNÂˆ][\˜][ÛˆHXÝX[Ù™œÙ]H^XÝYÙ™œÙ]ÂˆYˆ
-[\˜][ÛˆˆŠH[\˜][ÛˆOHLŽÂˆYˆ
-[\˜][ÛˆMŠH[\˜][Ûˆ
-ÏHLŽÂˆ™]\›ˆÈYÜ™YKXØÚY[[ˆ[\˜][ÛˆNÂˆB‚ˆ[˜Ý[ÛˆYÜ™YQ›Ü“ZYJZYKÙ^HH	ÐÉÊHÈ™]\›ˆYÜ™YQ›Ü”]Ú
-Ü[ZYQ›Ü’Ù^JZYKÙ^JKÙ^JNÈB‚ˆ[˜Ý[ÛˆÛšXÔ™Y™\™[˜ÙSZYJÙ^HH	ÐÉÊHÂˆÛÛœÝÛšXÈHÙ^T›ÛÝ
-Ù^JNÂˆ™]\›ˆ]ÚÓZYJ	ÝÛšXË›]\ŸIØXØÚY[[^
-ÛšXË˜XØÚY[[
-_M
-NÂˆB‚ˆËÈÝ\Ù[‹XÛÛ\]X›H[Ý˜X›KYÈÚ›ÛX]XÈÞ[X›\Ëˆ›ÈÈÜˆˆÚ\˜XÝ\œÈ\™H[Z]Y‚ˆ[˜Ý[ÛˆÛšXÔÛÛ˜Q›Ü”]Ú
-]ÚÙ^HH	ÐÉËÜ[ÛœÈHßJHÂˆÛÛœÝÚÜ˜\ÙHHÉÙ	Ë	Ü‰Ë	ÛIË	Ù‰Ë	ÜÉË	Û	Ë	Ý	×NÂˆÛÛœÝÛ™Ð˜\ÙHHÉÙÉË	Ü™IË	ÛZIË	Ù˜IË	ÜÛÛ	Ë	ÛIË	ÝI×NÂˆÛÛœÝ˜Z\ÙYHÉÙIË	ÜšIË	ÛXIË	ÙšIË	ÜÚIË	ÛIË	ÝI×NÂˆÛÛœÝÝÙ\™YHÉÙIË	Ü˜IË	ÛYIË	Ù™IË	ÜÙIË	ÛIË	ÝI×NÂˆÛÛœÝÈYÜ™YKXØÚY[[HHYÜ™YQ›Ü”]Ú
-]ÚÙ^JNÂˆ]^ÂˆYˆ
-XØÚY[[ˆ
-H^H˜Z\ÙYÙYÜ™YHHWNÂˆ[ÙHYˆ
-XØÚY[[
-H^HÝÙ\™YÙYÜ™YHHWNÂˆ[ÙH^H
-Ü[ÛœË›Û™ÈÈÛ™Ð˜\ÙHˆÚÜ˜\ÙJVÙYÜ™YHHWNÂˆËÈ^™[Y[H˜\™HÝX›H[\˜][ÛœÈ™[XZ[ˆÞ[X›ÛYœ™YH]š\ÚX›H\Ý[˜Ý‚ˆYˆ
-X]˜XœÊXØÚY[[
-HˆJH^
-ÏHXØÚY[[ˆÈ	ÚIËœ™\X]
-X]˜XœÊXØÚY[[
-HHJHˆ	ØIËœ™\X]
-X]˜XœÊXØÚY[[
-HHJNÂ‚ˆÛÛœÝZYHH]ÚÓZYJ]Ú
-NÂˆÛÛœÝØÝ]™HHX]™›ÛÜŠ
-ZYHHÛšXÔ™Y™\™[˜ÙSZYJÙ^JJHÈLŠNÂˆYˆ
-ØÝ]™Hˆ
-H^
-ÏHÜ[ÛœË›Û™ÈÈ	ø n‰Ëœ™\X]
-X]›Z[ŠØÝ]™KÊJHˆ‰È‹œ™\X]
-X]›Z[ŠØÝ]™KÊJNÂˆYˆ
-ØÝ]™H
-H^
-ÏHÜ[ÛœË›Û™ÈÈ	ø ¢ÉËœ™\X]
-X]›Z[Š[ØÝ]™KÊJHˆ	Ë	Ëœ™\X]
-X]›Z[Š[ØÝ]™KÊJNÂˆ™]\›ˆ^ÂˆB‚ˆ[˜Ý[ÛˆÛšXÔÛÛ˜Q›Ü“ZYJZYKÙ^HH	ÐÉËÜ[ÛœÈHßJHÂˆ™]\›ˆÛšXÔÛÛ˜Q›Ü”]Ú
-Ü[ÛœËœ]ÚÜ[ZYQ›Ü’Ù^JZYKÙ^JKÙ^KÜ[ÛœÊNÂˆB‚ˆ[˜Ý[Ûˆ˜[Y]T]ÚY[]J]™[Ù^HH	ÐÉË\HßKÛÛ˜Ù\]ÚHYJHÂˆYˆ
-Y]™[]™[\HOOH	Û›ÝIÊH™]\›ˆÈ˜[YˆYHNÂˆžHÂˆÛÛœÝ]ÚHÜš][”]Ú›Ü‘]™[
-]™[\Ù^KÛÛ˜Ù\]Ú
-NÂˆÛÛœÝ\Ü^SZYHH\Ü^SZYQ›Ü”\
-]™[›ZYK\, concertPitch);
-      return {
-        valid: pitchToMidi(pitch) === displayMidi,
-        pitch,
-        midi: Number(event.midi),
-        displayMidi,
-        solfa: tonicSolfaForPitch(pitch, key)
-      };
-    } catch (error) {
-      return { valid: false, pitch: null, midi: Number(event.midi), error: error.message };
+  function tokenizeLyrics(text) {
+    const source = String(text || '').replace(/\r/g, ' ').trim();
+    if (!source) return [];
+    const tokens = [];
+    let buffer = '';
+    const flush = (advance = 'space') => {
+      const clean = buffer.trim();
+      if (clean) tokens.push({ text: clean, advance, melisma: false, syllabic: 'single' });
+      buffer = '';
+    };
+    for (let index = 0; index < source.length; index += 1) {
+      const char = source[index];
+      if (/\s/.test(char)) { flush('space'); continue; }
+      if (char === '-') { flush('hyphen'); if (tokens.length) tokens[tokens.length - 1].syllabic = 'begin'; continue; }
+      if (char === '_') {
+        flush('melisma');
+        if (tokens.length) {
+          tokens[tokens.length - 1].melisma = true;
+          tokens[tokens.length - 1].advance = 'melisma';
+        } else tokens.push({ text: '', advance: 'melisma', melisma: true, syllabic: 'single' });
+        continue;
+      }
+      buffer += char;
     }
-  }
-
-  function intervalSemitones(value) {
-    if (typeof value === 'number' && Number.isFinite(value)) return Math.round(value);
-    const raw = String(value ?? '').trim();
-    if (!raw) throw new Error('Enter an interval such as m3, M3, P5, P8, or a semitone number.');
-    if (/^[[+-]?\d+(?:\.0+)?$/.test(raw)) return Math.round(Number(raw));
-    const aliases = { octave: 'P8', unison: 'P1', tritone: 'A4' };
-    const token = aliases[raw.toLowerCase()] || raw;
-    const match = token.match(/^([PpMmAaDd])\s*(\d+)$/);
-    if (!match) throw new Error(`Unsupported interval: ${raw}`);
-    const qualityRaw = match[1];
-    const quality = qualityRaw === 'p' ? 'P' : qualityRaw;
-    const number = Number(match[2]);
-    if (!Number.isInteger(number) || number < 1 || number > 22) throw new Error(`Interval number is out of range: ${number}`);
-    const simple = ((number - 1) % 7) + 1;
-    const octaves = Math.floor((number - 1) / 7);
-    const perfectClass = [1, 4, 5].includes(simple);
-    const majorBase = { 1: 0, 2: 2, 3: 4, 4: 5, 5: 7, 6: 9, 7: 11 }[simple] + octaves * 12;
-    let adjustment;
-    if (perfectClass) {
-      if (quality === 'P') adjustment = 0;
-      else if (quality === 'A') adjustment = 1;
-      else if (quality === 'd') adjustment = -1;
-      else throw new Error(`${quality}${number} is not a valid perfect-class interval.`);
-    } else {
-      if (quality === 'M') adjustment = 0;
-      else if (quality === 'm') adjustment = -1;
-      else if (quality === 'A') adjustment = 1;
-      else if (quality === 'd') adjustment = -2;
-      else throw new Error(`${quality}${number} is not a valid major-class interval.`);
+    flush('space');
+    for (let index = 0; index < tokens.length; index += 1) {
+      if (tokens[index].advance === 'hyphen') tokens[index].syllabic = index > 0 && tokens[index - 1].advance === 'hyphen' ? 'middle' : 'begin';
+      else if (index > 0 && tokens[index - 1].advance === 'hyphen') tokens[index].syllabic = 'end';
     }
-    return majorBase + adjustment;
+    return tokens;
   }
 
-  function buildTriad(rootPc, quality = 'major') {
-    const intervals = { major: [0, 4, 7], minor: [0, 3, 7], diminished: [0, 3, 6], augmented: [0, 4, 8] }[quality] || [0, 4, 7];
-    return intervals.map(interval => mod(rootPc + interval, 12));
+  function previewAssignments(score, text, options = {}) {
+    const notes = eligibleNotes(score, options);
+    const tokens = tokenizeLyrics(text);
+    const startIndex = Math.max(0, Number(options.startIndex) || 0);
+    const assignments = [];
+    let noteIndex = startIndex;
+    tokens.forEach(token => {
+      const target = notes[noteIndex];
+      assignments.push({
+        token,
+        partId: target?.part.id || null,
+        noteId: target?.event.id || null,
+        pitch: target?.event.pitch || null,
+        start: target?.event.start ?? null,
+        valid: Boolean(target)
+      });
+      noteIndex += 1;
+    });
+    return { assignments, availableNotes: notes.length, consumedNotes: Math.min(tokens.length, Math.max(0, notes.length - startIndex)), overflow: Math.max(0, tokens.length - Math.max(0, notes.length - startIndex)) };
   }
 
-  function diatonicTriad(degree, key = 'C', mode) {
-    const scale = scaleForKey(key, mode);
-    const index = mod(degree - 1, 7);
-    return [scale[index], scale[(index + 2) % 7], scale[(index + 4) % 7]];
+  function applyAssignments(score, preview, options = {}) {
+    const verse = Math.max(1, Number(options.verse) || 1);
+    const lineType = options.lineType || 'verse';
+    let applied = 0;
+    preview.assignments.filter(item => item.valid).forEach(item => {
+      model.setLyric(score, item.partId, item.noteId, item.token.text, {
+        verse,
+        lineType,
+        syllabic: item.token.syllabic,
+        melisma: item.token.melisma,
+        extensionState: item.token.melisma ? 'extend' : 'none'
+      });
+      applied += 1;
+    });
+    return applied;
   }
 
-  function nearestPitchClass(pc, target, min, max) {
-    let best = null;
-    let distance = Infinity;
-    for (let midi = min; midi <= max; midi += 1) {
-      if (mod(midi, 12) !== mod(pc, 12)) continue;
-      const current = Math.abs(midi - target);
-      if (current < distance) { best = midi; distance = current; }
-    }
-    return best == null ? clamp(target, min, max) : best;
+  function nextEligibleNote(score, partId, eventId, options = {}) {
+    const notes = eligibleNotes(score, { ...options, partIds: partId ? [partId] : options.partIds });
+    const index = notes.findIndex(item => item.part.id === partId && item.event.id === eventId);
+    return notes[index + 1] || null;
   }
 
-  function durationName(beats) {
-    const map = new Map([[8, 'breve'], [6, 'dotted whole'], [4, 'whole'], [3, 'dotted half'], [2, 'half'], [1.5, 'dotted quarter'], [1, 'quarter'], [.75, 'dotted eighth'], [.5, 'eighth'], [.375, 'dotted sixteenth'], [.25, 'sixteenth'], [.125, 'thirty-second'], [.0625, 'sixty-fourth']]);
-    return map.get(Number(beats)) || `${beats}-beat note`;
+  function previousEligibleNote(score, partId, eventId, options = {}) {
+    const notes = eligibleNotes(score, { ...options, partIds: partId ? [partId] : options.partIds });
+    const index = notes.findIndex(item => item.part.id === partId && item.event.id === eventId);
+    return index > 0 ? notes[index - 1] : null;
   }
 
-  function durationDots(beats) { return [6, 3, 1.5, .75, .375].includes(Number(beats)) ? 1 : 0; }
-  function baseDuration(beats) { return durationDots(beats) ? Number(beats) / 1.5 : Number(beats); }
-  function flagCount(beats) {
-    const base = baseDuration(beats);
-    if (base >= 1) return 0;
-    return clamp(Math.round(Math.log2(1 / base)), 1, 4);
+  function copyVerse(score, sourceVerse, targetVerse, options = {}) {
+    const source = Math.max(1, Number(sourceVerse) || 1);
+    const target = Math.max(1, Number(targetVerse) || 1);
+    let count = 0;
+    eligibleNotes(score, options).forEach(({ part, event }) => {
+      const lyric = (event.lyrics || []).find(item => Number(item.verse) === source && (!options.lineType || item.lineType === options.lineType));
+      if (!lyric) return;
+      model.setLyric(score, part.id, event.id, lyric.text, { ...lyric, verse: target });
+      count += 1;
+    });
+    return count;
   }
 
-  function noteTypeFromBeats(beats) {
-    const base = baseDuration(beats);
-    if (base >= 8) return 'breve';
-    if (base >= 4) return 'whole';
-    if (base >= 2) return 'half';
-    if (base >= 1) return 'quarter';
-    if (base >= .5) return 'eighth';
-    if 4base >= .25) return '16th';
-    if (base >= .125) return '32nd';
-    return '64th';
+  function searchReplace(score, search, replacement, options = {}) {
+    const needle = String(search || '');
+    if (!needle) return 0;
+    const flags = options.caseSensitive ? 'g' : 'gi';
+    const escaped = needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const pattern = new RegExp(escaped, flags);
+    let count = 0;
+    score.parts.forEach(part => part.events.filter(event => event.type === 'note').forEach(event => {
+      (event.lyrics || []).forEach(lyric => {
+        if (options.verse && Number(lyric.verse) !== Number(options.verse)) return;
+        if (options.lineType && lyric.lineType !== options.lineType) return;
+        const next = String(lyric.text || '').replace(pattern, () => { count += 1; return String(replacement ?? ''); });
+        if (next !== lyric.text) model.setLyric(score, part.id, event.id, next, { ...lyric });
+      });
+    }));
+    return count;
   }
 
-  function frequencyForMidi(midi) { return 440 * Math.pow(2, (Number(midi) - 69) / 12); }
+  function resetPosition(score, partId, eventId, verse = null) {
+    const part = score.parts.find(item => item.id === partId);
+    const event = part?.events.find(item => item.id === eventId);
+    if (!event || event.type !== 'note') return false;
+    event.lyrics = (event.lyrics || []).map(lyric => verse == null || Number(lyric.verse) === Number(verse) ? { ...lyric, offsetX: 0, offsetY: 0 } : lyric);
+    model.normalizeEventLyrics(event, part);
+    model.touch(score);
+    return true;
+  }
 
-  return {
-    PITCH_CLASSES_SHARP, PITCH_CLASSES_FLAT, LETTERS, KEY_SIGNATURES, MAJOR_SCALE, NATURAL_MINOR_SCALE,
-    SHARP_ORDER, FLAT_ORDER, clamp, mod, parsePitch, accidentalText, pitchToMidi, midiToPitch,
-    keyRoot, keyRootPc, isMinorKey, keySignatureCount, keySignatureAlteration, scaleForKey,
-    pitchToDiatonicIndex, diatonicIndexToNatural, pitchFromDiatonicIndex, spellMidiForKey, transposeKey,
-    clefBottomLineIndex, staffStepForPitch, pitchForStaffStep, displayMidiForPart, soundingMidiFromDisplay,
-    writtenPitchForEvent, degreeForPitch, degreeForMidi, tonicReferenceMidi, tonicSolfaForPitch,
-    tonicSolfaForMidi, validatePitchIdentity, intervalSemitones, buildTriad, diatonicTriad, nearestPitchClass,
-    durationName, durationDots, baseDuration, flagCount, noteTypeFromBeats, frequencyForMidi
-  };
+  function lyricCount(score) {
+    return score.parts.reduce((sum, part) => sum + part.events.reduce((eventSum, event) => eventSum + (Array.isArray(event.lyrics) ? event.lyrics.length : 0), 0), 0);
+  }
+
+  return { eligibleNotes, tokenizeLyrics, previewAssignments, applyAssignments, nextEligibleNote, previousEligibleNote, copyVerse, searchReplace, resetPosition, lyricCount };
 });
