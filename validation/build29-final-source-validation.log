@@ -1,0 +1,1283 @@
+
+> airmonlink-composer@1.1.9 validate
+> npm run lint && npm test
+
+
+> airmonlink-composer@1.1.9 lint
+> node scripts/lint.js
+
+Syntax validation passed for 62 JavaScript files.
+
+> airmonlink-composer@1.1.9 test
+> node --test test/*.test.js
+
+TAP version 13
+# Subtest: Version 1.1.9 Build 29 has one clean production entry and source allowlist
+ok 1 - Version 1.1.9 Build 29 has one clean production entry and source allowlist
+  ---
+  duration_ms: 1.159747
+  type: 'test'
+  ...
+# Subtest: clean Composer 3 startup fails closed until the semantic renderer verifies
+ok 2 - clean Composer 3 startup fails closed until the semantic renderer verifies
+  ---
+  duration_ms: 0.372985
+  type: 'test'
+  ...
+# Subtest: clean Composer 3 HTML has six work areas, official palette and no legacy bridge
+ok 3 - clean Composer 3 HTML has six work areas, official palette and no legacy bridge
+  ---
+  duration_ms: 3.925896
+  type: 'test'
+  ...
+# Subtest: renderer calls the canonical engine directly instead of hidden DOM controls
+ok 4 - renderer calls the canonical engine directly instead of hidden DOM controls
+  ---
+  duration_ms: 1.486554
+  type: 'test'
+  ...
+# Subtest: preload exposes only explicit Composer 3 desktop operations
+ok 5 - preload exposes only explicit Composer 3 desktop operations
+  ---
+  duration_ms: 0.251996
+  type: 'test'
+  ...
+# Subtest: all supported note and rest durations are represented
+ok 6 - all supported note and rest durations are represented
+  ---
+  duration_ms: 1.626021
+  type: 'test'
+  ...
+# Subtest: time signatures calculate exact measure capacity
+ok 7 - time signatures calculate exact measure capacity
+  ---
+  duration_ms: 0.570099
+  type: 'test'
+  ...
+# Subtest: measure validation prevents a duration from crossing a barline
+ok 8 - measure validation prevents a duration from crossing a barline
+  ---
+  duration_ms: 5.326111
+  type: 'test'
+  ...
+# Subtest: chromatic tonic sol-fa uses syllables and never accidental symbols
+ok 9 - chromatic tonic sol-fa uses syllables and never accidental symbols
+  ---
+  duration_ms: 1.895453
+  type: 'test'
+  ...
+# Subtest: written staff pitch, sounding pitch and sol-fa stay synchronized
+ok 10 - written staff pitch, sounding pitch and sol-fa stay synchronized
+  ---
+  duration_ms: 12.356151
+  type: 'test'
+  ...
+# Subtest: grand staff assigns notes to the correct clef without changing pitch
+ok 11 - grand staff assigns notes to the correct clef without changing pitch
+  ---
+  duration_ms: 2.125325
+  type: 'test'
+  ...
+# Subtest: selecting a new harmony replaces the complete previous arrangement
+ok 12 - selecting a new harmony replaces the complete previous arrangement
+  ---
+  duration_ms: 10.137472
+  type: 'test'
+  ...
+# Subtest: .airscore serialization preserves editable data
+ok 13 - .airscore serialization preserves editable data
+  ---
+  duration_ms: 24.802305
+  type: 'test'
+  ...
+# Subtest: MusicXML export contains score metadata and notes
+ok 14 - MusicXML export contains score metadata and notes
+  ---
+  duration_ms: 5.069229
+  type: 'test'
+  ...
+# Subtest: MIDI export writes a standard MIDI header
+ok 15 - MIDI export writes a standard MIDI header
+  ---
+  duration_ms: 2.177853
+  type: 'test'
+  ...
+# Subtest: history supports undo and redo snapshots
+ok 16 - history supports undo and redo snapshots
+  ---
+  duration_ms: 4.992885
+  type: 'test'
+  ...
+# Subtest: pitch conversion round-trips common notes
+ok 17 - pitch conversion round-trips common notes
+  ---
+  duration_ms: 0.854332
+  type: 'test'
+  ...
+# Subtest: tonic sol-fa follows the selected key
+ok 18 - tonic sol-fa follows the selected key
+  ---
+  duration_ms: 9.537763
+  type: 'test'
+  ...
+# Subtest: diatonic triads are built from the key scale
+ok 19 - diatonic triads are built from the key scale
+  ---
+  duration_ms: 0.923535
+  type: 'test'
+  ...
+# Subtest: pickup measure uses its true capacity and shifts later measure starts
+ok 20 - pickup measure uses its true capacity and shifts later measure starts
+  ---
+  duration_ms: 5.772045
+  type: 'test'
+  ...
+# Subtest: lyric objects receive stable attachment metadata
+ok 21 - lyric objects receive stable attachment metadata
+  ---
+  duration_ms: 9.276053
+  type: 'test'
+  ...
+# Subtest: lyrics paragraph parser handles hyphens and melismas
+ok 22 - lyrics paragraph parser handles hyphens and melismas
+  ---
+  duration_ms: 0.529268
+  type: 'test'
+  ...
+# Subtest: lyrics preview and commit attach words to consecutive notes
+ok 23 - lyrics preview and commit attach words to consecutive notes
+  ---
+  duration_ms: 6.467802
+  type: 'test'
+  ...
+# Subtest: lyric search and replace works across verses
+ok 24 - lyric search and replace works across verses
+  ---
+  duration_ms: 3.436647
+  type: 'test'
+  ...
+# Subtest: sol-fa edit updates the same staff note bidirectionally
+ok 25 - sol-fa edit updates the same staff note bidirectionally
+  ---
+  duration_ms: 11.821309
+  type: 'test'
+  ...
+# Subtest: modern teaching mode uses full syllables
+ok 26 - modern teaching mode uses full syllables
+  ---
+  duration_ms: 0.847973
+  type: 'test'
+  ...
+# Subtest: MXL export contains a recoverable MusicXML score
+ok 27 - MXL export contains a recoverable MusicXML score
+  ---
+  duration_ms: 4.347364
+  type: 'test'
+  ...
+# Subtest: airscore detects corruption rather than silently opening damaged data
+ok 28 - airscore detects corruption rather than silently opening damaged data
+  ---
+  duration_ms: 2.617878
+  type: 'test'
+  ...
+# Subtest: creates a complete SATB score
+ok 29 - creates a complete SATB score
+  ---
+  duration_ms: 8.983979
+  type: 'test'
+  ...
+# Subtest: adds, edits and deletes notes
+ok 30 - adds, edits and deletes notes
+  ---
+  duration_ms: 9.915075
+  type: 'test'
+  ...
+# Subtest: validates instrument range
+ok 31 - validates instrument range
+  ---
+  duration_ms: 8.068656
+  type: 'test'
+  ...
+# Subtest: converts a melody to tonic sol-fa text
+ok 32 - converts a melody to tonic sol-fa text
+  ---
+  duration_ms: 16.751776
+  type: 'test'
+  ...
+# Subtest: generates three editable SATB alternatives
+ok 33 - generates three editable SATB alternatives
+  ---
+  duration_ms: 16.864454
+  type: 'test'
+  ...
+# Subtest: omitted rhythmic positions are completed by exact calculated rests
+ok 34 - omitted rhythmic positions are completed by exact calculated rests
+  ---
+  duration_ms: 5.668521
+  type: 'test'
+  ...
+# Subtest: voice layers can occupy the same rhythmic position independently
+ok 35 - voice layers can occupy the same rhythmic position independently
+  ---
+  duration_ms: 0.676117
+  type: 'test'
+  ...
+# Subtest: inserting a measure shifts later notes without losing their layer or lyrics
+ok 36 - inserting a measure shifts later notes without losing their layer or lyrics
+  ---
+  duration_ms: 6.433871
+  type: 'test'
+  ...
+# Subtest: a mid-score meter change moves later material to the new bar boundary
+ok 37 - a mid-score meter change moves later material to the new bar boundary
+  ---
+  duration_ms: 0.464281
+  type: 'test'
+  ...
+# Subtest: repeat counts and first/second endings create the correct playback order
+ok 38 - repeat counts and first/second endings create the correct playback order
+  ---
+  duration_ms: 0.53041
+  type: 'test'
+  ...
+# Subtest: multiple lyric verses remain attached to the note and appear in tonic sol-fa
+ok 39 - multiple lyric verses remain attached to the note and appear in tonic sol-fa
+  ---
+  duration_ms: 2.628314
+  type: 'test'
+  ...
+# Subtest: harmony can be applied as independent layers on the selected staff
+ok 40 - harmony can be applied as independent layers on the selected staff
+  ---
+  duration_ms: 3.08885
+  type: 'test'
+  ...
+# Subtest: each lyric verse preserves an independent visual offset
+ok 41 - each lyric verse preserves an independent visual offset
+  ---
+  duration_ms: 16.091653
+  type: 'test'
+  ...
+# Subtest: lyric IDs and offsets survive note movement, measure insertion and airscore reopen
+ok 42 - lyric IDs and offsets survive note movement, measure insertion and airscore reopen
+  ---
+  duration_ms: 4.750595
+  type: 'test'
+  ...
+# Subtest: four lyric verses remain aligned in tonic sol-fa output
+ok 43 - four lyric verses remain aligned in tonic sol-fa output
+  ---
+  duration_ms: 6.364238
+  type: 'test'
+  ...
+# Subtest: traditional sol-fa handles difficult major and minor keys without raw accidentals
+ok 44 - traditional sol-fa handles difficult major and minor keys without raw accidentals
+  ---
+  duration_ms: 7.277868
+  type: 'test'
+  ...
+# Subtest: mid-score key changes recalculate tonic sol-fa from the active measure
+ok 45 - mid-score key changes recalculate tonic sol-fa from the active measure
+  ---
+  duration_ms: 1.648205
+  type: 'test'
+  ...
+# Subtest: playback loop range maps precisely to notated beats
+ok 46 - playback loop range maps precisely to notated beats
+  ---
+  duration_ms: 1.129332
+  type: 'test'
+  ...
+# Subtest: playback loop range respects a pickup measure
+ok 47 - playback loop range respects a pickup measure
+  ---
+  duration_ms: 1.076974
+  type: 'test'
+  ...
+# Subtest: MusicXML export includes grace, tuplet, slur and transposition information
+ok 48 - MusicXML export includes grace, tuplet, slur and transposition information
+  ---
+  duration_ms: 3.552109
+  type: 'test'
+  ...
+# Subtest: transaction history stores structural patches and restores edits
+ok 49 - transaction history stores structural patches and restores edits
+  ---
+  duration_ms: 11.971959
+  type: 'test'
+  ...
+# Subtest: selection supports additive events and marquee geometry
+ok 50 - selection supports additive events and marquee geometry
+  ---
+  duration_ms: 0.724539
+  type: 'test'
+  ...
+# Subtest: copy paste transpose and delete operate on a multi-event selection
+ok 51 - copy paste transpose and delete operate on a multi-event selection
+  ---
+  duration_ms: 4.171623
+  type: 'test'
+  ...
+# Subtest: a note crossing a barline is split into tied segments
+ok 52 - a note crossing a barline is split into tied segments
+  ---
+  duration_ms: 1.658229
+  type: 'test'
+  ...
+# Subtest: desktop file service saves atomically, backs up, locks, tracks recent files and recovers
+ok 53 - desktop file service saves atomically, backs up, locks, tracks recent files and recovers
+  ---
+  duration_ms: 30.598376
+  type: 'test'
+  ...
+# Subtest: airscore v8 keeps application workspace settings outside score content
+ok 54 - airscore v8 keeps application workspace settings outside score content
+  ---
+  duration_ms: 4.618908
+  type: 'test'
+  ...
+# Subtest: every staff exposes exactly four independent layers in 4/4
+ok 55 - every staff exposes exactly four independent layers in 4/4
+  ---
+  duration_ms: 12.883746
+  type: 'test'
+  ...
+# Subtest: four independent layers complete a compound 6/8 measure
+ok 56 - four independent layers complete a compound 6/8 measure
+  ---
+  duration_ms: 1.179817
+  type: 'test'
+  ...
+# Subtest: notes can occupy the same beat in all four layers without sharing capacity
+ok 57 - notes can occupy the same beat in all four layers without sharing capacity
+  ---
+  duration_ms: 0.774854
+  type: 'test'
+  ...
+# Subtest: measure overfill is detected independently per layer
+ok 58 - measure overfill is detected independently per layer
+  ---
+  duration_ms: 0.260127
+  type: 'test'
+  ...
+# Subtest: pickup capacity and calculated rests are independent per layer
+ok 59 - pickup capacity and calculated rests are independent per layer
+  ---
+  duration_ms: 1.071435
+  type: 'test'
+  ...
+# Subtest: automatic barline split creates stable tie spanner and one playback attack
+ok 60 - automatic barline split creates stable tie spanner and one playback attack
+  ---
+  duration_ms: 3.043382
+  type: 'test'
+  ...
+# Subtest: slurs use stable note IDs and can be removed without deleting notes
+ok 61 - slurs use stable note IDs and can be removed without deleting notes
+  ---
+  duration_ms: 0.918337
+  type: 'test'
+  ...
+# Subtest: lyrics remain on the first tied note and appear in tonic sol-fa
+ok 62 - lyrics remain on the first tied note and appear in tonic sol-fa
+  ---
+  duration_ms: 2.111084
+  type: 'test'
+  ...
+# Subtest: traditional tonic sol-fa uses rhythm punctuation and no raw accidental symbols
+ok 63 - traditional tonic sol-fa uses rhythm punctuation and no raw accidental symbols
+  ---
+  duration_ms: 1.014711
+  type: 'test'
+  ...
+# Subtest: voices above four migrate to additional staves with a compatibility report
+ok 64 - voices above four migrate to additional staves with a compatibility report
+  ---
+  duration_ms: 0.808254
+  type: 'test'
+  ...
+# Subtest: MIDI step-time entry records notes and chords in the active layer
+ok 65 - MIDI step-time entry records notes and chords in the active layer
+  ---
+  duration_ms: 0.848614
+  type: 'test'
+  ...
+# Subtest: airscore v8 preserves four layers, spanners and traditional sol-fa settings
+ok 66 - airscore v8 preserves four layers, spanners and traditional sol-fa settings
+  ---
+  duration_ms: 1.22902
+  type: 'test'
+  ...
+# Subtest: articulations are score objects preserved by MusicXML export and airscore round trip
+ok 67 - articulations are score objects preserved by MusicXML export and airscore round trip
+  ---
+  duration_ms: 0.979669
+  type: 'test'
+  ...
+# Subtest: professional templates initialise real groups, four layers and page settings
+ok 68 - professional templates initialise real groups, four layers and page settings
+  ---
+  duration_ms: 3.692218
+  type: 'test'
+  ...
+# Subtest: new scores prefer a clean staff-only workspace and preserve editable publication metadata
+ok 69 - new scores prefer a clean staff-only workspace and preserve editable publication metadata
+  ---
+  duration_ms: 10.699664
+  type: 'test'
+  ...
+# Subtest: selected notes copy to another independent layer with lyrics and spanners
+ok 70 - selected notes copy to another independent layer with lyrics and spanners
+  ---
+  duration_ms: 10.386047
+  type: 'test'
+  ...
+# Subtest: copy-to-layer can replace conflicts without altering the source layer
+ok 71 - copy-to-layer can replace conflicts without altering the source layer
+  ---
+  duration_ms: 1.033259
+  type: 'test'
+  ...
+# Subtest: paste-and-replace supports all, pitch-only and rhythm-only operations
+ok 72 - paste-and-replace supports all, pitch-only and rhythm-only operations
+  ---
+  duration_ms: 1.595807
+  type: 'test'
+  ...
+# Subtest: tonic-solfa text omits staff and internal layer names by default
+ok 73 - tonic-solfa text omits staff and internal layer names by default
+  ---
+  duration_ms: 3.662975
+  type: 'test'
+  ...
+# Subtest: layout spacing changes never alter musical playback data
+ok 74 - layout spacing changes never alter musical playback data
+  ---
+  duration_ms: 0.600183
+  type: 'test'
+  ...
+# Subtest: airscore v8 migrates older projects to optional overlay, editable headers and rapid lyrics
+ok 75 - airscore v8 migrates older projects to optional overlay, editable headers and rapid lyrics
+  ---
+  duration_ms: 1.995732
+  type: 'test'
+  ...
+# Subtest: tonic-solfa lyrics preserve syllable hyphens, melisma underscores and elision marks
+ok 76 - tonic-solfa lyrics preserve syllable hyphens, melisma underscores and elision marks
+  ---
+  duration_ms: 0.863566
+  type: 'test'
+  ...
+# Subtest: new score defaults preserve rapid lyric entry and layer-colour editing preferences
+ok 77 - new score defaults preserve rapid lyric entry and layer-colour editing preferences
+  ---
+  duration_ms: 12.726642
+  type: 'test'
+  ...
+# Subtest: lyric entry can navigate forward and backward within the same layer and staff
+ok 78 - lyric entry can navigate forward and backward within the same layer and staff
+  ---
+  duration_ms: 1.244854
+  type: 'test'
+  ...
+# Subtest: airscore v8 migration adds video-workflow preferences without changing music
+ok 79 - airscore v8 migration adds video-workflow preferences without changing music
+  ---
+  duration_ms: 1.274929
+  type: 'test'
+  ...
+# Subtest: version 9 scores preserve the dedicated sol-fa page settings and optional staff lane
+ok 80 - version 9 scores preserve the dedicated sol-fa page settings and optional staff lane
+  ---
+  duration_ms: 11.115403
+  type: 'test'
+  ...
+# Subtest: formal symbol table documents context-sensitive comma dot dash underscore and bar meanings
+ok 81 - formal symbol table documents context-sensitive comma dot dash underscore and bar meanings
+  ---
+  duration_ms: 0.253968
+  type: 'test'
+  ...
+# Subtest: tokenizer distinguishes attached octave comma from standalone rhythmic comma
+ok 82 - tokenizer distinguishes attached octave comma from standalone rhythmic comma
+  ---
+  duration_ms: 0.544531
+  type: 'test'
+  ...
+# Subtest: timed notes, rests, repeated attacks and bars create exact 4/4 events
+ok 83 - timed notes, rests, repeated attacks and bars create exact 4/4 events
+  ---
+  duration_ms: 1.085967
+  type: 'test'
+  ...
+# Subtest: a sustain dash extends one note without creating a repeated playback attack
+ok 84 - a sustain dash extends one note without creating a repeated playback attack
+  ---
+  duration_ms: 0.269131
+  type: 'test'
+  ...
+# Subtest: suffix punctuation encodes duration while prefix punctuation controls onset grid
+ok 85 - suffix punctuation encodes duration while prefix punctuation controls onset grid
+  ---
+  duration_ms: 0.539424
+  type: 'test'
+  ...
+# Subtest: compound 6/8 validation uses two dotted-quarter pulses
+ok 86 - compound 6/8 validation uses two dotted-quarter pulses
+  ---
+  duration_ms: 0.245255
+  type: 'test'
+  ...
+# Subtest: underfill overfill and unknown symbols include exact diagnostic location
+ok 87 - underfill overfill and unknown symbols include exact diagnostic location
+  ---
+  duration_ms: 0.35555
+  type: 'test'
+  ...
+# Subtest: do-based minor, la-based minor and fixed-do produce distinct correct syllables
+ok 88 - do-based minor, la-based minor and fixed-do produce distinct correct syllables
+  ---
+  duration_ms: 1.961511
+  type: 'test'
+  ...
+# Subtest: reverse transcription preserves explicit upper and lower octaves
+ok 89 - reverse transcription preserves explicit upper and lower octaves
+  ---
+  duration_ms: 0.479935
+  type: 'test'
+  ...
+# Subtest: validated tonic sol-fa replaces a staff passage with structured notes and rests
+ok 90 - validated tonic sol-fa replaces a staff passage with structured notes and rests
+  ---
+  duration_ms: 1.113558
+  type: 'test'
+  ...
+# Subtest: airscore v9 migrates older projects without changing their structured musical events
+ok 91 - airscore v9 migrates older projects without changing their structured musical events
+  ---
+  duration_ms: 1.200538
+  type: 'test'
+  ...
+# Subtest: cached measure timeline follows pickup and mid-score meter changes exactly
+ok 92 - cached measure timeline follows pickup and mid-score meter changes exactly
+  ---
+  duration_ms: 5.92927
+  type: 'test'
+  ...
+# Subtest: event lookup cache invalidates when score events change
+ok 93 - event lookup cache invalidates when score events change
+  ---
+  duration_ms: 1.162271
+  type: 'test'
+  ...
+# Subtest: binary measure lookup remains responsive on the maximum 2000-measure score
+ok 94 - binary measure lookup remains responsive on the maximum 2000-measure score
+  ---
+  duration_ms: 50.724012
+  type: 'test'
+  ...
+# Subtest: shutdown coordinator sends one renderer request and ignores duplicate close requests
+ok 95 - shutdown coordinator sends one renderer request and ignores duplicate close requests
+  ---
+  duration_ms: 1.412574
+  type: 'test'
+  ...
+# Subtest: cancelled renderer shutdown leaves the application eligible for another attempt
+ok 96 - cancelled renderer shutdown leaves the application eligible for another attempt
+  ---
+  duration_ms: 0.334298
+  type: 'test'
+  ...
+# Subtest: shutdown waits are bounded and report a timeout instead of hanging indefinitely
+ok 97 - shutdown waits are bounded and report a timeout instead of hanging indefinitely
+  ---
+  duration_ms: 35.528839
+  type: 'test'
+  ...
+# Subtest: save dialog can extend the coordinator timeout without losing the pending request
+ok 98 - save dialog can extend the coordinator timeout without losing the pending request
+  ---
+  duration_ms: 61.22839
+  type: 'test'
+  ...
+# Subtest: playback shutdown stops sounding nodes, clears timers and closes the audio context
+ok 99 - playback shutdown stops sounding nodes, clears timers and closes the audio context
+  ---
+  duration_ms: 0.44341
+  type: 'test'
+  ...
+# Subtest: Electron lifecycle wiring uses the clean Composer 3 startup and bounded shutdown
+ok 100 - Electron lifecycle wiring uses the clean Composer 3 startup and bounded shutdown
+  ---
+  duration_ms: 4.168948
+  type: 'test'
+  ...
+# Subtest: semantic chord groups share one tick duration voice and stable chord id
+ok 101 - semantic chord groups share one tick duration voice and stable chord id
+  ---
+  duration_ms: 13.432864
+  type: 'test'
+  ...
+# Subtest: one chord member can be removed without deleting the entire chord
+ok 102 - one chord member can be removed without deleting the entire chord
+  ---
+  duration_ms: 1.000259
+  type: 'test'
+  ...
+# Subtest: chord duration and transposition update every member as one semantic event
+ok 103 - chord duration and transposition update every member as one semantic event
+  ---
+  duration_ms: 1.380676
+  type: 'test'
+  ...
+# Subtest: composition metadata and anchored text survive normalization
+ok 104 - composition metadata and anchored text survive normalization
+  ---
+  duration_ms: 0.91338
+  type: 'test'
+  ...
+# Subtest: rhythmic layout gives denser and lyric-heavy measures more space
+ok 105 - rhythmic layout gives denser and lyric-heavy measures more space
+  ---
+  duration_ms: 3.72057
+  type: 'test'
+  ...
+# Subtest: system plan reflows complete measures and keeps rhythmic positions ordered
+ok 106 - system plan reflows complete measures and keeps rhythmic positions ordered
+  ---
+  duration_ms: 18.74185
+  type: 'test'
+  ...
+# Subtest: vertical staff requirements expand for lyrics and optional tonic sol-fa
+ok 107 - vertical staff requirements expand for lyrics and optional tonic sol-fa
+  ---
+  duration_ms: 0.787302
+  type: 'test'
+  ...
+# Subtest: pickup configuration shifts later musical anchors while preserving the opening measure
+ok 108 - pickup configuration shifts later musical anchors while preserving the opening measure
+  ---
+  duration_ms: 1.036664
+  type: 'test'
+  ...
+# Subtest: pickup configuration rejects a duration shorter than opening authored music
+ok 109 - pickup configuration rejects a duration shorter than opening authored music
+  ---
+  duration_ms: 1.547645
+  type: 'test'
+  ...
+# Subtest: removing a measure also removes or shifts anchored text and harmony safely
+ok 110 - removing a measure also removes or shifts anchored text and harmony safely
+  ---
+  duration_ms: 0.841453
+  type: 'test'
+  ...
+# Subtest: interval parser and chord interval insertion support common and compound intervals
+ok 111 - interval parser and chord interval insertion support common and compound intervals
+  ---
+  duration_ms: 1.564079
+  type: 'test'
+  ...
+# Subtest: anchored text visual offsets remain separate from its musical anchor
+ok 112 - anchored text visual offsets remain separate from its musical anchor
+  ---
+  duration_ms: 0.336551
+  type: 'test'
+  ...
+# Subtest: manual system and page breaks are respected by the layout plan
+ok 113 - manual system and page breaks are respected by the layout plan
+  ---
+  duration_ms: 0.407818
+  type: 'test'
+  ...
+# Subtest: MusicXML export preserves page settings and manual print breaks
+ok 114 - MusicXML export preserves page settings and manual print breaks
+  ---
+  duration_ms: 3.158524
+  type: 'test'
+  ...
+# Subtest: measure attributes expose undoable manual system and page break semantics
+ok 115 - measure attributes expose undoable manual system and page break semantics
+  ---
+  duration_ms: 1.004716
+  type: 'test'
+  ...
+# Subtest: page, header and footer text remain page-anchored through timeline edits
+ok 116 - page, header and footer text remain page-anchored through timeline edits
+  ---
+  duration_ms: 1.697918
+  type: 'test'
+  ...
+# Subtest: MusicXML credits preserve semantic page number for page-scoped text
+ok 117 - MusicXML credits preserve semantic page number for page-scoped text
+  ---
+  duration_ms: 0.792741
+  type: 'test'
+  ...
+# Subtest: manual staff spacing is stored separately from automatic layout and can be reset
+ok 118 - manual staff spacing is stored separately from automatic layout and can be reset
+  ---
+  duration_ms: 0.769656
+  type: 'test'
+  ...
+# Subtest: workspace state clamps unsafe restored dimensions and invalid active panels
+ok 119 - workspace state clamps unsafe restored dimensions and invalid active panels
+  ---
+  duration_ms: 1.660313
+  type: 'test'
+  ...
+# Subtest: compact workspaces redock floating panels and auto-collapse the right dock safely
+ok 120 - compact workspaces redock floating panels and auto-collapse the right dock safely
+  ---
+  duration_ms: 0.640914
+  type: 'test'
+  ...
+# Subtest: large workspaces retain user floating state and safe dock dimensions
+ok 121 - large workspaces retain user floating state and safe dock dimensions
+  ---
+  duration_ms: 0.148972
+  type: 'test'
+  ...
+# Subtest: chord notehead collision geometry alternates seconds without changing semantic pitch
+ok 122 - chord notehead collision geometry alternates seconds without changing semantic pitch
+  ---
+  duration_ms: 0.24787
+  type: 'test'
+  ...
+# Subtest: simultaneous unisons in separate voices receive opposing engraving offsets
+ok 123 - simultaneous unisons in separate voices receive opposing engraving offsets
+  ---
+  duration_ms: 0.235641
+  type: 'test'
+  ...
+# Subtest: accidentals in close chord positions are assigned separate columns
+ok 124 - accidentals in close chord positions are assigned separate columns
+  ---
+  duration_ms: 0.223723
+  type: 'test'
+  ...
+# Subtest: lyric verse number remains metadata and never contaminates lyric text
+ok 125 - lyric verse number remains metadata and never contaminates lyric text
+  ---
+  duration_ms: 14.225474
+  type: 'test'
+  ...
+# Subtest: independent lyric verses survive airscore and MusicXML round trips
+ok 126 - independent lyric verses survive airscore and MusicXML round trips
+  ---
+  duration_ms: 5.942028
+  type: 'test'
+  ...
+# Subtest: compatible notes at one onset normalize into a semantic chord
+ok 127 - compatible notes at one onset normalize into a semantic chord
+  ---
+  duration_ms: 1.166637
+  type: 'test'
+  ...
+# Subtest: Build 22 preserves ornaments, techniques, fermata and beams in the semantic event
+ok 128 - Build 22 preserves ornaments, techniques, fermata and beams in the semantic event
+  ---
+  duration_ms: 21.083907
+  type: 'test'
+  ...
+# Subtest: Build 22 airscore round trip preserves notation-core extensions
+ok 129 - Build 22 airscore round trip preserves notation-core extensions
+  ---
+  duration_ms: 13.082602
+  type: 'test'
+  ...
+# Subtest: Build 22 MusicXML export contains semantic notation-core elements
+ok 130 - Build 22 MusicXML export contains semantic notation-core elements
+  ---
+  duration_ms: 9.401911
+  type: 'test'
+  ...
+# Subtest: Build 22 keeps exactly four independent user-facing voice layers
+ok 131 - Build 22 keeps exactly four independent user-facing voice layers
+  ---
+  duration_ms: 4.999175
+  type: 'test'
+  ...
+# Subtest: Build 22 undo and redo retain notation-core edits
+ok 132 - Build 22 undo and redo retain notation-core edits
+  ---
+  duration_ms: 4.074898
+  type: 'test'
+  ...
+# Subtest: Build 23 edits the same selected staff note bidirectionally from Tonic Sol-fa
+ok 133 - Build 23 edits the same selected staff note bidirectionally from Tonic Sol-fa
+  ---
+  duration_ms: 19.4131
+  type: 'test'
+  ...
+# Subtest: Build 23 converts a complete Tonic Sol-fa passage into the authoritative score
+ok 134 - Build 23 converts a complete Tonic Sol-fa passage into the authoritative score
+  ---
+  duration_ms: 14.574414
+  type: 'test'
+  ...
+# Subtest: Build 23 rejects invalid Sol-fa passages before replacing staff notation
+ok 135 - Build 23 rejects invalid Sol-fa passages before replacing staff notation
+  ---
+  duration_ms: 3.98885
+  type: 'test'
+  ...
+# Subtest: Build 23 preserves Sol-fa conventions, overlay and imported source through airscore
+ok 136 - Build 23 preserves Sol-fa conventions, overlay and imported source through airscore
+  ---
+  duration_ms: 14.160187
+  type: 'test'
+  ...
+# Subtest: Build 23 formal symbol table documents punctuation without ambiguity
+ok 137 - Build 23 formal symbol table documents punctuation without ambiguity
+  ---
+  duration_ms: 0.330342
+  type: 'test'
+  ...
+# Subtest: Build 23 modulation recalculates Tonic Sol-fa without changing sounding pitch
+ok 138 - Build 23 modulation recalculates Tonic Sol-fa without changing sounding pitch
+  ---
+  duration_ms: 7.395894
+  type: 'test'
+  ...
+# Subtest: Build 24 stores independent lyric verses as metadata without contaminating text
+ok 139 - Build 24 stores independent lyric verses as metadata without contaminating text
+  ---
+  duration_ms: 23.856877
+  type: 'test'
+  ...
+# Subtest: Build 24 rapid lyric entry preserves hyphens melismas and navigation order
+ok 140 - Build 24 rapid lyric entry preserves hyphens melismas and navigation order
+  ---
+  duration_ms: 15.518289
+  type: 'test'
+  ...
+# Subtest: Build 24 verse copy delete search replace and undo redo are semantic operations
+ok 141 - Build 24 verse copy delete search replace and undo redo are semantic operations
+  ---
+  duration_ms: 10.971439
+  type: 'test'
+  ...
+# Subtest: Build 24 lyric offsets survive airscore round trip independently by verse
+ok 142 - Build 24 lyric offsets survive airscore round trip independently by verse
+  ---
+  duration_ms: 9.17925
+  type: 'test'
+  ...
+# Subtest: Build 24 publication fields and staff text positions survive airscore
+ok 143 - Build 24 publication fields and staff text positions survive airscore
+  ---
+  duration_ms: 4.656635
+  type: 'test'
+  ...
+# Subtest: Build 24 page text uses semantic page scope and persistent visual offsets
+ok 144 - Build 24 page text uses semantic page scope and persistent visual offsets
+  ---
+  duration_ms: 4.237941
+  type: 'test'
+  ...
+# Subtest: Build 24 MusicXML carries lyrics and publication credits
+ok 145 - Build 24 MusicXML carries lyrics and publication credits
+  ---
+  duration_ms: 4.695963
+  type: 'test'
+  ...
+# Subtest: Build 24 clean interface exposes draggable publication hierarchy without legacy controls
+ok 146 - Build 24 clean interface exposes draggable publication hierarchy without legacy controls
+  ---
+  duration_ms: 6.150409
+  type: 'test'
+  ...
+# Subtest: Build 25 provides a hidden-by-default docked piano panel with accessible controls
+ok 147 - Build 25 provides a hidden-by-default docked piano panel with accessible controls
+  ---
+  duration_ms: 4.806848
+  type: 'test'
+  ...
+# Subtest: piano chord entry creates one semantic chord without duplicate pitches and one undo removes it
+ok 148 - piano chord entry creates one semantic chord without duplicate pitches and one undo removes it
+  ---
+  duration_ms: 12.895304
+  type: 'test'
+  ...
+# Subtest: piano entry routes through the active part, active voice, cursor and duration
+ok 149 - piano entry routes through the active part, active voice, cursor and duration
+  ---
+  duration_ms: 1.224764
+  type: 'test'
+  ...
+# Subtest: piano settings survive an airscore round trip
+ok 150 - piano settings survive an airscore round trip
+  ---
+  duration_ms: 2.859369
+  type: 'test'
+  ...
+# Subtest: professional interface keeps the piano dock below the score rather than overlaying it
+ok 151 - professional interface keeps the piano dock below the score rather than overlaying it
+  ---
+  duration_ms: 0.397983
+  type: 'test'
+  ...
+# Subtest: piano panel uses direct engine commands and never hidden legacy controls
+ok 152 - piano panel uses direct engine commands and never hidden legacy controls
+  ---
+  duration_ms: 0.793272
+  type: 'test'
+  ...
+# Subtest: professional interface preserves official colour identity and accessibility modes
+ok 153 - professional interface preserves official colour identity and accessibility modes
+  ---
+  duration_ms: 0.271495
+  type: 'test'
+  ...
+# Subtest: Build 26 transport pauses at the current beat and resumes from it
+ok 154 - Build 26 transport pauses at the current beat and resumes from it
+  ---
+  duration_ms: 4.374684
+  type: 'test'
+  ...
+# Subtest: Build 26 measure navigation uses exact score timeline boundaries
+ok 155 - Build 26 measure navigation uses exact score timeline boundaries
+  ---
+  duration_ms: 1.528737
+  type: 'test'
+  ...
+# Subtest: Build 26 count-in settings are clamped and exposed by transport state
+ok 156 - Build 26 count-in settings are clamped and exposed by transport state
+  ---
+  duration_ms: 0.466615
+  type: 'test'
+  ...
+# Subtest: Build 26 playback source schedules count-in before score audio
+ok 157 - Build 26 playback source schedules count-in before score audio
+  ---
+  duration_ms: 0.360667
+  type: 'test'
+  ...
+# Subtest: Build 26 interface exposes complete transport and MIDI output controls
+ok 158 - Build 26 interface exposes complete transport and MIDI output controls
+  ---
+  duration_ms: 4.657075
+  type: 'test'
+  ...
+# Subtest: Build 26 MIDI output sends real note-on and note-off messages from semantic events
+ok 159 - Build 26 MIDI output sends real note-on and note-off messages from semantic events
+  ---
+  duration_ms: 1.003635
+  type: 'test'
+  ...
+# Subtest: Build 26 print preview is isolated through explicit Electron IPC
+ok 160 - Build 26 print preview is isolated through explicit Electron IPC
+  ---
+  duration_ms: 2.275859
+  type: 'test'
+  ...
+# Subtest: Build 26 protects dirty projects before new/setup and requests coordinated quit
+ok 161 - Build 26 protects dirty projects before new/setup and requests coordinated quit
+  ---
+  duration_ms: 0.476209
+  type: 'test'
+  ...
+# Subtest: Build 27 rejects malformed and damaged airscore input without mutating the current score
+ok 162 - Build 27 rejects malformed and damaged airscore input without mutating the current score
+  ---
+  duration_ms: 8.529161
+  type: 'test'
+  ...
+# Subtest: Build 27 rejects malformed MusicXML, MXL and MIDI inputs explicitly
+ok 163 - Build 27 rejects malformed MusicXML, MXL and MIDI inputs explicitly
+  ---
+  duration_ms: 1.314237
+  type: 'test'
+  ...
+# Subtest: Build 27 rapid four-layer input preserves canonical validation and undo
+ok 164 - Build 27 rapid four-layer input preserves canonical validation and undo
+  ---
+  duration_ms: 1332.698255
+  type: 'test'
+  ...
+# Subtest: Build 27 large-score timeline lookup stays bounded
+ok 165 - Build 27 large-score timeline lookup stays bounded
+  ---
+  duration_ms: 37.522627
+  type: 'test'
+  ...
+# Subtest: Build 27 bounded waits convert hung operations into explicit timeout results
+ok 166 - Build 27 bounded waits convert hung operations into explicit timeout results
+  ---
+  duration_ms: 30.487571
+  type: 'test'
+  ...
+# Subtest: Build 27 performance audit is a local machine-readable gate
+ok 167 - Build 27 performance audit is a local machine-readable gate
+  ---
+  duration_ms: 0.401538
+  type: 'test'
+  ...
+# Subtest: Build 27 browser and desktop failure states remain visible and bounded
+ok 168 - Build 27 browser and desktop failure states remain visible and bounded
+  ---
+  duration_ms: 0.491351
+  type: 'test'
+  ...
+# Subtest: Build 29 integration metadata is internally consistent
+ok 169 - Build 29 integration metadata is internally consistent
+  ---
+  duration_ms: 2.516848
+  type: 'test'
+  ...
+# Subtest: Build 29 lockfile contains no private internal registry host
+ok 170 - Build 29 lockfile contains no private internal registry host
+  ---
+  duration_ms: 0.451282
+  type: 'test'
+  ...
+# Subtest: Build 29 packages only the canonical Composer 3 application boundary
+ok 171 - Build 29 packages only the canonical Composer 3 application boundary
+  ---
+  duration_ms: 0.682516
+  type: 'test'
+  ...
+# Subtest: Build 29 Windows package declares installer, portable target and airscore association
+ok 172 - Build 29 Windows package declares installer, portable target and airscore association
+  ---
+  duration_ms: 0.20111
+  type: 'test'
+  ...
+# Subtest: Build 29 stays under the local GitHub embargo until the exit gate passes
+ok 173 - Build 29 stays under the local GitHub embargo until the exit gate passes
+  ---
+  duration_ms: 0.289421
+  type: 'test'
+  ...
+# Subtest: Build 29 status documents every unavailable production gate
+ok 174 - Build 29 status documents every unavailable production gate
+  ---
+  duration_ms: 0.336621
+  type: 'test'
+  ...
+# Subtest: A4 portrait uses a complete physical-page aspect ratio rather than Build 28 half-page dimensions
+ok 175 - A4 portrait uses a complete physical-page aspect ratio rather than Build 28 half-page dimensions
+  ---
+  duration_ms: 0.917085
+  type: 'test'
+  ...
+# Subtest: A4 landscape swaps physical dimensions without inventing another page system
+ok 176 - A4 landscape swaps physical dimensions without inventing another page system
+  ---
+  duration_ms: 0.20808
+  type: 'test'
+  ...
+# Subtest: Fit Width at 1366x768 accounts for inspector and workspace padding without horizontal overflow
+ok 177 - Fit Width at 1366x768 accounts for inspector and workspace padding without horizontal overflow
+  ---
+  duration_ms: 0.378463
+  type: 'test'
+  ...
+# Subtest: Fit Page at 1920x1080 fits the complete page, not only its upper half
+ok 178 - Fit Page at 1920x1080 fits the complete page, not only its upper half
+  ---
+  duration_ms: 0.686863
+  type: 'test'
+  ...
+# Subtest: device-pixel ratio does not double-apply Windows display scaling
+ok 179 - device-pixel ratio does not double-apply Windows display scaling
+  ---
+  duration_ms: 0.157635
+  type: 'test'
+  ...
+# Subtest: scaled layout boxes match visual dimensions at zoom below 100 percent
+ok 180 - scaled layout boxes match visual dimensions at zoom below 100 percent
+  ---
+  duration_ms: 0.120489
+  type: 'test'
+  ...
+# Subtest: continuous page layout keeps complete pages in one connected column with stable gaps
+ok 181 - continuous page layout keeps complete pages in one connected column with stable gaps
+  ---
+  duration_ms: 0.193608
+  type: 'test'
+  ...
+# Subtest: spread mode creates deterministic two-page rows
+ok 182 - spread mode creates deterministic two-page rows
+  ---
+  duration_ms: 0.251134
+  type: 'test'
+  ...
+# Subtest: reflow preserves the current musical page anchor across zoom changes
+ok 183 - reflow preserves the current musical page anchor across zoom changes
+  ---
+  duration_ms: 0.490691
+  type: 'test'
+  ...
+# Subtest: one authoritative service recomputes page, viewport, zoom, layout and scroll together
+ok 184 - one authoritative service recomputes page, viewport, zoom, layout and scroll together
+  ---
+  duration_ms: 0.589197
+  type: 'test'
+  ...
+# Subtest: physical page margins produce one shared printable content box
+ok 185 - physical page margins produce one shared printable content box
+  ---
+  duration_ms: 0.170403
+  type: 'test'
+  ...
+# Subtest: staff systems are cast into complete physical pages without splitting a system
+ok 186 - staff systems are cast into complete physical pages without splitting a system
+  ---
+  duration_ms: 0.189923
+  type: 'test'
+  ...
+# Subtest: Build 29 loads the viewport service before the renderer
+ok 187 - Build 29 loads the viewport service before the renderer
+  ---
+  duration_ms: 4.991939
+  type: 'test'
+  ...
+# Subtest: Build 29 removes transform-only page compensation and hard-coded half-page dimensions
+ok 188 - Build 29 removes transform-only page compensation and hard-coded half-page dimensions
+  ---
+  duration_ms: 1.660303
+  type: 'test'
+  ...
+# Subtest: Build 29 uses one service for page size, zoom, page placement, margins, and pagination
+ok 189 - Build 29 uses one service for page size, zoom, page placement, margins, and pagination
+  ---
+  duration_ms: 0.58435
+  type: 'test'
+  ...
+# Subtest: Build 29 observes real workspace changes and supports Ctrl-wheel zoom
+ok 190 - Build 29 observes real workspace changes and supports Ctrl-wheel zoom
+  ---
+  duration_ms: 0.461097
+  type: 'test'
+  ...
+# Subtest: Staff and Tonic Sol-fa render into the same physical-page slot system
+ok 191 - Staff and Tonic Sol-fa render into the same physical-page slot system
+  ---
+  duration_ms: 0.559924
+  type: 'test'
+  ...
+# Subtest: Composer 3 defines every required functional command group
+ok 192 - Composer 3 defines every required functional command group
+  ---
+  duration_ms: 1.125716
+  type: 'test'
+  ...
+# Subtest: every generated group command is implemented by the clean renderer command dispatcher
+ok 193 - every generated group command is implemented by the clean renderer command dispatcher
+  ---
+  duration_ms: 6.578297
+  type: 'test'
+  ...
+# Subtest: compatible automatic entry creates one semantic chord and rejects duplicate pitches
+ok 194 - compatible automatic entry creates one semantic chord and rejects duplicate pitches
+  ---
+  duration_ms: 10.176104
+  type: 'test'
+  ...
+# Subtest: MIDI notes at one held onset automatically form a semantic chord
+ok 195 - MIDI notes at one held onset automatically form a semantic chord
+  ---
+  duration_ms: 2.135139
+  type: 'test'
+  ...
+# Subtest: pasted simultaneous notes normalize to one chord and round-trip through MusicXML
+ok 196 - pasted simultaneous notes normalize to one chord and round-trip through MusicXML
+  ---
+  duration_ms: 3.268097
+  type: 'test'
+  ...
+# Subtest: verse selection remains metadata through paste, copy, replace, save and export
+ok 197 - verse selection remains metadata through paste, copy, replace, save and export
+  ---
+  duration_ms: 5.628362
+  type: 'test'
+  ...
+# Subtest: verse number changes do not mutate existing lyric strings
+ok 198 - verse number changes do not mutate existing lyric strings
+  ---
+  duration_ms: 0.433305
+  type: 'test'
+  ...
+# Subtest: publication text visual layout remains separate from metadata
+ok 199 - publication text visual layout remains separate from metadata
+  ---
+  duration_ms: 6.867126
+  type: 'test'
+  ...
+# Subtest: publication text layout survives airscore save and reopen
+ok 200 - publication text layout survives airscore save and reopen
+  ---
+  duration_ms: 4.450288
+  type: 'test'
+  ...
+# Subtest: unsafe publication layout keys and values are discarded or clamped
+ok 201 - unsafe publication layout keys and values are discarded or clamped
+  ---
+  duration_ms: 0.14774
+  type: 'test'
+  ...
+# Subtest: MusicXML credits preserve publication text styling and visual offsets
+ok 202 - MusicXML credits preserve publication text styling and visual offsets
+  ---
+  duration_ms: 2.82698
+  type: 'test'
+  ...
+# Subtest: solfa pagination creates physical pages and never splits a system
+ok 203 - solfa pagination creates physical pages and never splits a system
+  ---
+  duration_ms: 104.617223
+  type: 'test'
+  ...
+# Subtest: manual page breaks begin a new tonic-solfa page
+ok 204 - manual page breaks begin a new tonic-solfa page
+  ---
+  duration_ms: 1.496769
+  type: 'test'
+  ...
+# Subtest: four lyric verses increase system and page requirements
+ok 205 - four lyric verses increase system and page requirements
+  ---
+  duration_ms: 5.683194
+  type: 'test'
+  ...
+# Subtest: SATB with four complete lyric verses paginates without page overflow
+ok 206 - SATB with four complete lyric verses paginates without page overflow
+  ---
+  duration_ms: 19.685646
+  type: 'test'
+  ...
+# Subtest: page dimensions honor size and orientation
+ok 207 - page dimensions honor size and orientation
+  ---
+  duration_ms: 2.329899
+  type: 'test'
+  ...
+# Subtest: fit modes account for both viewport dimensions and preserve manual zoom
+ok 208 - fit modes account for both viewport dimensions and preserve manual zoom
+  ---
+  duration_ms: 0.195641
+  type: 'test'
+  ...
+# Subtest: legacy right dock state migrates to an unobstructed score canvas
+ok 209 - legacy right dock state migrates to an unobstructed score canvas
+  ---
+  duration_ms: 6.831403
+  type: 'test'
+  ...
+# Subtest: current panel state survives migration and remains safely clamped
+ok 210 - current panel state survives migration and remains safely clamped
+  ---
+  duration_ms: 0.352365
+  type: 'test'
+  ...
+1..210
+# tests 210
+# suites 0
+# pass 210
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2129.704854

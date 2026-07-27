@@ -1,0 +1,58 @@
+{
+  "product": "Airmonlink Composer 3",
+  "version": "1.1.9",
+  "buildNumber": 29,
+  "githubEmbargoStatus": "ACTIVE",
+  "platform": "linux",
+  "node": "v22.16.0",
+  "createdUtc": "2026-07-26T23:53:24.353Z",
+  "score": {
+    "measures": 2000,
+    "events": 1000
+  },
+  "checks": [
+    {
+      "name": "100000-measure-lookups",
+      "status": "PASS",
+      "elapsedMs": 18.535,
+      "thresholdMs": 2000,
+      "result": 99640025
+    },
+    {
+      "name": "airscore-serialize",
+      "status": "PASS",
+      "elapsedMs": 20.106,
+      "thresholdMs": 2500,
+      "result": 1762259
+    },
+    {
+      "name": "airscore-deserialize",
+      "status": "PASS",
+      "elapsedMs": 16.695,
+      "thresholdMs": 3500,
+      "result": 1000
+    },
+    {
+      "name": "musicxml-export",
+      "status": "PASS",
+      "elapsedMs": 32.043,
+      "thresholdMs": 5000,
+      "result": 316479
+    },
+    {
+      "name": "layout-plan",
+      "status": "PASS",
+      "elapsedMs": 24.666,
+      "thresholdMs": 4000,
+      "result": 250
+    },
+    {
+      "name": "rapid-semantic-entry",
+      "status": "PASS",
+      "elapsedMs": 3155.136,
+      "thresholdMs": 8000,
+      "result": 750
+    }
+  ],
+  "status": "PASS"
+}

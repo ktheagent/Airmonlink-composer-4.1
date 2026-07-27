@@ -1,0 +1,237 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "Composer 3 mounted",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Canonical semantic model",
+      "status": "PASS",
+      "details": "{\"build\":29,\"mounted\":true,\"tabs\":6,\"activePanels\":1,\"legacySelectors\":0,\"visibleControls\":225,\"scoreViewport\":true,\"physicalPageService\":true,\"commandGroups\":16,\"allControlsConnected\":true,\"canonicalModel\":true,\"directApi\":true,\"fourVoiceLayers\":true,\"independentModels\":0,\"partCount\":1,\"measureCount\":8,\"eventCount\":32,\"fourLayerPlayback\":true,\"midiModes\":true}"
+    },
+    {
+      "name": "Direct engine API",
+      "status": "PASS",
+      "details": "{\"build\":29,\"mounted\":true,\"tabs\":6,\"activePanels\":1,\"legacySelectors\":0,\"visibleControls\":225,\"scoreViewport\":true,\"physicalPageService\":true,\"commandGroups\":16,\"allControlsConnected\":true,\"canonicalModel\":true,\"directApi\":true,\"fourVoiceLayers\":true,\"independentModels\":0,\"partCount\":1,\"measureCount\":8,\"eventCount\":32,\"fourLayerPlayback\":true,\"midiModes\":true}"
+    },
+    {
+      "name": "Exactly four voice layers",
+      "status": "PASS",
+      "details": "{\"build\":29,\"mounted\":true,\"tabs\":6,\"activePanels\":1,\"legacySelectors\":0,\"visibleControls\":225,\"scoreViewport\":true,\"physicalPageService\":true,\"commandGroups\":16,\"allControlsConnected\":true,\"canonicalModel\":true,\"directApi\":true,\"fourVoiceLayers\":true,\"independentModels\":0,\"partCount\":1,\"measureCount\":8,\"eventCount\":32,\"fourLayerPlayback\":true,\"midiModes\":true}"
+    },
+    {
+      "name": "No legacy selectors",
+      "status": "PASS",
+      "details": "{\"build\":29,\"mounted\":true,\"tabs\":6,\"activePanels\":1,\"legacySelectors\":0,\"visibleControls\":225,\"scoreViewport\":true,\"physicalPageService\":true,\"commandGroups\":16,\"allControlsConnected\":true,\"canonicalModel\":true,\"directApi\":true,\"fourVoiceLayers\":true,\"independentModels\":0,\"partCount\":1,\"measureCount\":8,\"eventCount\":32,\"fourLayerPlayback\":true,\"midiModes\":true}"
+    },
+    {
+      "name": "Six work-area tabs",
+      "status": "PASS",
+      "details": "{\"build\":29,\"mounted\":true,\"tabs\":6,\"activePanels\":1,\"legacySelectors\":0,\"visibleControls\":225,\"scoreViewport\":true,\"physicalPageService\":true,\"commandGroups\":16,\"allControlsConnected\":true,\"canonicalModel\":true,\"directApi\":true,\"fourVoiceLayers\":true,\"independentModels\":0,\"partCount\":1,\"measureCount\":8,\"eventCount\":32,\"fourLayerPlayback\":true,\"midiModes\":true}"
+    },
+    {
+      "name": "One active panel",
+      "status": "PASS",
+      "details": "{\"build\":29,\"mounted\":true,\"tabs\":6,\"activePanels\":1,\"legacySelectors\":0,\"visibleControls\":225,\"scoreViewport\":true,\"physicalPageService\":true,\"commandGroups\":16,\"allControlsConnected\":true,\"canonicalModel\":true,\"directApi\":true,\"fourVoiceLayers\":true,\"independentModels\":0,\"partCount\":1,\"measureCount\":8,\"eventCount\":32,\"fourLayerPlayback\":true,\"midiModes\":true}"
+    },
+    {
+      "name": "Visible score viewport",
+      "status": "PASS",
+      "details": "{\"build\":29,\"mounted\":true,\"tabs\":6,\"activePanels\":1,\"legacySelectors\":0,\"visibleControls\":225,\"scoreViewport\":true,\"physicalPageService\":true,\"commandGroups\":16,\"allControlsConnected\":true,\"canonicalModel\":true,\"directApi\":true,\"fourVoiceLayers\":true,\"independentModels\":0,\"partCount\":1,\"measureCount\":8,\"eventCount\":32,\"fourLayerPlayback\":true,\"midiModes\":true}"
+    },
+    {
+      "name": "All commands connected",
+      "status": "PASS",
+      "details": "{\"build\":29,\"mounted\":true,\"tabs\":6,\"activePanels\":1,\"legacySelectors\":0,\"visibleControls\":225,\"scoreViewport\":true,\"physicalPageService\":true,\"commandGroups\":16,\"allControlsConnected\":true,\"canonicalModel\":true,\"directApi\":true,\"fourVoiceLayers\":true,\"independentModels\":0,\"partCount\":1,\"measureCount\":8,\"eventCount\":32,\"fourLayerPlayback\":true,\"midiModes\":true}"
+    },
+    {
+      "name": "Window shell and score workspace stay inside the viewport",
+      "status": "PASS",
+      "details": "{\"innerWidth\":1600,\"areaLeft\":250,\"areaRight\":1600,\"areaWidth\":1350,\"shellRight\":1600,\"shellWidth\":1600}"
+    },
+    {
+      "name": "Note command changes canonical score",
+      "status": "PASS",
+      "details": "before=32;after=33"
+    },
+    {
+      "name": "Independent Voice 2 entry",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Ornament command updates selected semantic note",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Technique command updates selected semantic note",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Beam command updates selected semantic note",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Fermata command updates selected semantic note",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Sol-fa syllable edits the selected staff note",
+      "status": "PASS",
+      "details": "[{\"midi\":55,\"pitch\":\"G3\",\"syllable\":\"s\"}]"
+    },
+    {
+      "name": "Sol-fa passage creates authoritative Voice 4 events",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Staff playback and Sol-fa verification passes",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Optional Sol-fa staff overlay is stored in score settings",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Multi-verse lyric entry stores verse as metadata",
+      "status": "PASS",
+      "details": "[{\"id\":\"lyric-ms2gen7p-3nl\",\"noteId\":\"note-ms2gen77-1co\",\"partId\":\"part-ms2gen3e-a\",\"staffId\":null,\"voiceId\":4,\"verse\":2,\"lineType\":\"lyric\",\"text\":\"Rejoice\",\"syllabic\":\"single\",\"hyphenState\":\"none\",\"melisma\":false,\"extensionState\":\"none\",\"elision\":false,\"offsetX\":0,\"offsetY\":0,\"styleId\":\"lyrics-default\"},{\"id\":\"lyric-ms2gen7p-3nm\",\"noteId\":\"note-ms2gen77-1lu\",\"partId\":\"part-ms2gen3e-a\",\"staffId\":null,\"voiceId\":4,\"verse\":2,\"lineType\":\"lyric\",\"text\":\"Rejoice\",\"syllabic\":\"single\",\"hyphenState\":\"none\",\"melisma\":false,\"extensionState\":\"none\",\"elision\":false,\"offsetX\":0,\"offsetY\":0,\"styleId\":\"lyrics-default\"},{\"id\":\"lyric-ms2gen7p-3nn\",\"noteId\":\"note-ms2gen77-1v0\",\"partId\":\"part-ms2gen3e-a\",\"staffId\":null,\"voiceId\":4,\"verse\":2,\"lineType\":\"lyric\",\"text\":\"Rejoice\",\"syllabic\":\"single\",\"hyphenState\":\"none\",\"melisma\":false,\"extensionState\":\"none\",\"elision\":false,\"offsetX\":0,\"offsetY\":0,\"styleId\":\"lyrics-default\"},{\"id\":\"lyric-ms2gen7p-3no\",\"noteId\":\"note-ms2gen78-246\",\"partId\":\"part-ms2gen3e-a\",\"staffId\":null,\"voiceId\":4,\"verse\":2,\"lineType\":\"lyric\",\"text\":\"Rejoice\",\"syllabic\":\"single\",\"hyphenState\":\"none\",\"melisma\":false,\"extensionState\":\"none\",\"elision\":false,\"offsetX\":0,\"offsetY\":0,\"styleId\":\"lyrics-default\"},{\"id\":\"lyric-ms2gen7p-3np\",\"noteId\":\"note-ms2gen78-2db\",\"partId\":\"part-ms2gen3e-a\",\"staffId\":null,\"voiceId\":4,\"verse\":2,\"lineType\":\"lyric\",\"text\":\"Rejoice\",\"syllabic\":\"single\",\"hyphenState\":\"none\",\"melisma\":false,\"extensionState\":\"none\",\"elision\":false,\"offsetX\":0,\"offsetY\":0,\"styleId\":\"lyrics-default\"},{\"id\":\"lyric-ms2gen7p-3nq\",\"noteId\":\"note-ms2gen79-2mg\",\"partId\":\"part-ms2gen3e-a\",\"staffId\":null,\"voiceId\":4,\"verse\":2,\"lineType\":\"lyric\",\"text\":\"Rejoice\",\"syllabic\":\"single\",\"hyphenState\":\"none\",\"melisma\":false,\"extensionState\":\"none\",\"elision\":false,\"offsetX\":0,\"offsetY\":0,\"styleId\":\"lyrics-default\"},{\"id\":\"lyric-ms2gen7p-3nr\",\"noteId\":\"note-ms2gen79-2vl\",\"partId\":\"part-ms2gen3e-a\",\"staffId\":null,\"voiceId\":4,\"verse\":2,\"lineType\":\"lyric\",\"text\":\"Rejoice\",\"syllabic\":\"single\",\"hyphenState\":\"none\",\"melisma\":false,\"extensionState\":\"none\",\"elision\":false,\"offsetX\":0,\"offsetY\":0,\"styleId\":\"lyrics-default\"},{\"id\":\"lyric-ms2gen7p-3ns\",\"noteId\":\"note-ms2gen7a-34q\",\"partId\":\"part-ms2gen3e-a\",\"staffId\":null,\"voiceId\":4,\"verse\":2,\"lineType\":\"lyric\",\"text\":\"Rejoice\",\"syllabic\":\"single\",\"hyphenState\":\"none\",\"melisma\":false,\"extensionState\":\"none\",\"elision\":false,\"offsetX\":0,\"offsetY\":0,\"styleId\":\"lyrics-default\"}]"
+    },
+    {
+      "name": "Publication hierarchy renders semantic metadata",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Publication text position persists in semantic layout",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Page-scoped text is visible and semantic",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Lyric command updates score",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Piano panel is hidden by default",
+      "status": "PASS",
+      "details": "{\"height\":640,\"hidden\":true}"
+    },
+    {
+      "name": "Docked piano panel opens below score without overlay",
+      "status": "PASS",
+      "details": "{\"before\":{\"height\":640,\"hidden\":true},\"after\":{\"hidden\":false,\"scoreHeight\":416,\"panelHeight\":224,\"expanded\":\"true\"}}"
+    },
+    {
+      "name": "Piano chord enters one deduplicated semantic chord in active Voice 3",
+      "status": "PASS",
+      "details": "{\"before\":41,\"after\":44,\"count\":3,\"midis\":[60,64,67],\"voices\":[3,3,3],\"chords\":[\"chord-ms2gen9o-40z\"],\"selected\":3}"
+    },
+    {
+      "name": "Piano selection is reflected on visible keys",
+      "status": "PASS",
+      "details": "{\"before\":41,\"after\":44,\"count\":3,\"midis\":[60,64,67],\"voices\":[3,3,3],\"chords\":[\"chord-ms2gen9o-40z\"],\"selected\":3}"
+    },
+    {
+      "name": "Piano audition mode does not create score events",
+      "status": "PASS",
+      "details": "{\"before\":44,\"after\":44,\"inputMode\":false}"
+    },
+    {
+      "name": "Piano panel collapses and returns score space",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Count-in and metronome options reach semantic transport",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Measure navigation moves to exact measure boundary",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Pause preserves playback position",
+      "status": "PASS",
+      "details": "{\"loop\":false,\"loopStart\":0,\"loopEnd\":32,\"metronome\":true,\"countInMeasures\":2,\"paused\":true,\"layerMix\":{\"1\":{\"muted\":false,\"solo\":false,\"volume\":1},\"2\":{\"muted\":false,\"solo\":false,\"volume\":1},\"3\":{\"muted\":false,\"solo\":false,\"volume\":1},\"4\":{\"muted\":false,\"solo\":false,\"volume\":1}},\"playing\":false,\"beat\":1.75}"
+    },
+    {
+      "name": "MIDI permission failure is visible and nonfatal",
+      "status": "PASS",
+      "details": "{\"status\":\"permission-denied\",\"message\":\"MIDI permission failed: Permission denied for reliability test\",\"errorVisible\":true}"
+    },
+    {
+      "name": "Web MIDI output schedules note-on and note-off messages",
+      "status": "PASS",
+      "details": "{\"device\":\"preview-output\",\"messages\":[{\"data\":[144,60,88],\"timestamp\":485.10000000009313},{\"data\":[128,60,0],\"timestamp\":1110.1000000000931},{\"data\":[144,60,96],\"timestamp\":485.10000000009313},{\"data\":[128,60,0],\"timestamp\":1110.1000000000931},{\"data\":[144,64,96],\"timestamp\":485.20000000018626},{\"data\":[128,64,0],\"timestamp\":1110.2000000001863},{\"data\":[144,67,96],\"timestamp\":485.20000000018626},{\"data\":[128,67,0],\"timestamp\":1110.2000000001863},{\"data\":[144,60,88],\"timestamp\":485.20000000018626},{\"data\":[128,60,0],\"timestamp\":1110.2000000001863},{\"data\":[144,55,88],\"timestamp\":1110.2000000001863},{\"data\":[128,55,0],\"timestamp\":1735.2000000001863},{\"data\":[144,62,88],\"timestamp\":1110.2000000001863},{\"data\":[128,62,0],\"timestamp\":1735.2000000001863},{\"data\":[144,64,88],\"timestamp\":1735.2000000001863},{\"data\":[128,64,0],\"timestamp\":2360.2000000001863},{\"data\":[144,65,88],\"timestamp\":2360.2000000001863},{\"data\":[128,65,0],\"timestamp\":2985.2000000001863},{\"data\":[144,67,88],\"timestamp\":2985.3000000002794},{\"data\":[128,67,0],\"timestamp\":3610.3000000002794},{\"data\":[144,69,88],\"timestamp\":3610.3000000002794},{\"data\":[128,69,0],\"timestamp\":4235.300000000279},{\"data\":[144,71,88],\"timestamp\":4235.300000000279},{\"data\":[128,71,0],\"timestamp\":4860.300000000279},{\"data\":[144,72,88],\"timestamp\":4860.300000000279},{\"data\":[128,72,0],\"timestamp\":5485.300000000279}],\"status\":\"Scheduled 13 notes to MIDI output\"}"
+    },
+    {
+      "name": "Print preview reaches isolated desktop service",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Dedicated Tonic Sol-fa page",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Save reaches desktop service",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "MusicXML export reaches desktop service",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "MIDI export reaches desktop service",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "PDF command reaches desktop service",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Browser PDF signature",
+      "status": "PASS",
+      "details": "84712"
+    },
+    {
+      "name": "Official colour identity",
+      "status": "PASS",
+      "details": "[\"#06152f\",\"#1d64c8\",\"#d9a928\"]"
+    },
+    {
+      "name": "No runtime exceptions",
+      "status": "PASS",
+      "details": "[]"
+    },
+    {
+      "name": "No console errors",
+      "status": "PASS",
+      "details": "[]"
+    }
+  ],
+  "exceptions": [],
+  "consoleErrors": []
+}

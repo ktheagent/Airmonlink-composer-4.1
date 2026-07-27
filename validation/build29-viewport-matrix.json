@@ -1,0 +1,1140 @@
+{
+  "product": "Airmonlink Composer 3",
+  "version": "1.1.9",
+  "buildNumber": 29,
+  "githubEmbargoStatus": "ACTIVE",
+  "createdUtc": "2026-07-26T23:53:34.729Z",
+  "scenarios": [
+    {
+      "scenario": {
+        "width": 1366,
+        "height": 768,
+        "scale": 1
+      },
+      "browser": {
+        "innerWidth": 1366,
+        "innerHeight": 629,
+        "devicePixelRatio": 1,
+        "app": {
+          "left": 0,
+          "right": 1366,
+          "top": 0,
+          "bottom": 629,
+          "width": 1366,
+          "height": 629
+        },
+        "area": {
+          "left": 250,
+          "right": 1366,
+          "top": 193,
+          "bottom": 601,
+          "width": 1116,
+          "height": 408
+        }
+      },
+      "checks": [
+        {
+          "name": "desktop shell remains inside viewport",
+          "status": "PASS",
+          "details": {
+            "innerWidth": 1366,
+            "innerHeight": 629,
+            "devicePixelRatio": 1,
+            "app": {
+              "left": 0,
+              "right": 1366,
+              "top": 0,
+              "bottom": 629,
+              "width": 1366,
+              "height": 629
+            },
+            "area": {
+              "left": 250,
+              "right": 1366,
+              "top": 193,
+              "bottom": 601,
+              "width": 1116,
+              "height": 408
+            }
+          }
+        },
+        {
+          "name": "Fit Width shows a complete page without horizontal workspace overflow",
+          "status": "PASS",
+          "details": {
+            "area": {
+              "left": 250,
+              "right": 1366,
+              "width": 1116
+            },
+            "page": {
+              "left": 289,
+              "right": 1326.982666015625,
+              "width": 1037.982666015625,
+              "height": 1468.0233154296875
+            },
+            "scrollWidth": 1086,
+            "clientWidth": 1086,
+            "zoom": 1.307797619047619
+          }
+        },
+        {
+          "name": "Fit Page shows the complete portrait page",
+          "status": "PASS",
+          "details": {
+            "area": {
+              "left": 250,
+              "right": 1366,
+              "top": 193,
+              "bottom": 601,
+              "width": 1116,
+              "height": 408
+            },
+            "page": {
+              "left": 680.5,
+              "right": 935.0411987304688,
+              "top": 217,
+              "bottom": 576.9987182617188,
+              "width": 254.54119873046875,
+              "height": 359.99871826171875
+            },
+            "zoom": 0.32070707070707066
+          }
+        },
+        {
+          "name": "Continuous mode casts a long score onto multiple physical pages",
+          "status": "PASS",
+          "details": {
+            "activeView": "staff",
+            "zoomMode": "page",
+            "zoom": 0.32070707070707066,
+            "pageLayoutMode": "continuous",
+            "currentPage": 1,
+            "pageCount": 4,
+            "layout": {
+              "mode": "continuous",
+              "zoom": 0.32070707070707066,
+              "gap": 32,
+              "page": {
+                "width": 793.7007874015749,
+                "height": 1122.5196850393702
+              },
+              "pages": [
+                {
+                  "index": 0,
+                  "x": 0,
+                  "y": 0,
+                  "width": 254.54545454545453,
+                  "height": 360
+                },
+                {
+                  "index": 1,
+                  "x": 0,
+                  "y": 392,
+                  "width": 254.54545454545453,
+                  "height": 360
+                },
+                {
+                  "index": 2,
+                  "x": 0,
+                  "y": 784,
+                  "width": 254.54545454545453,
+                  "height": 360
+                },
+                {
+                  "index": 3,
+                  "x": 0,
+                  "y": 1176,
+                  "width": 254.54545454545453,
+                  "height": 360
+                }
+              ],
+              "extent": {
+                "width": 254.54545454545453,
+                "height": 1536
+              }
+            }
+          }
+        },
+        {
+          "name": "Spread mode creates two-page rows",
+          "status": "PASS",
+          "details": {
+            "activeView": "staff",
+            "zoomMode": "page",
+            "zoom": 0.32070707070707066,
+            "pageLayoutMode": "spread",
+            "currentPage": 1,
+            "pageCount": 4,
+            "layout": {
+              "mode": "spread",
+              "zoom": 0.32070707070707066,
+              "gap": 32,
+              "page": {
+                "width": 793.7007874015749,
+                "height": 1122.5196850393702
+              },
+              "pages": [
+                {
+                  "index": 0,
+                  "x": 0,
+                  "y": 0,
+                  "width": 254.54545454545453,
+                  "height": 360
+                },
+                {
+                  "index": 1,
+                  "x": 286.5454545454545,
+                  "y": 0,
+                  "width": 254.54545454545453,
+                  "height": 360
+                },
+                {
+                  "index": 2,
+                  "x": 0,
+                  "y": 392,
+                  "width": 254.54545454545453,
+                  "height": 360
+                },
+                {
+                  "index": 3,
+                  "x": 286.5454545454545,
+                  "y": 392,
+                  "width": 254.54545454545453,
+                  "height": 360
+                }
+              ],
+              "extent": {
+                "width": 541.090909090909,
+                "height": 752
+              }
+            }
+          }
+        },
+        {
+          "name": "Horizontal mode places pages on one horizontal sequence",
+          "status": "PASS",
+          "details": {
+            "activeView": "staff",
+            "zoomMode": "page",
+            "zoom": 0.32070707070707066,
+            "pageLayoutMode": "horizontal",
+            "currentPage": 3,
+            "pageCount": 4,
+            "layout": {
+              "mode": "horizontal",
+              "zoom": 0.32070707070707066,
+              "gap": 32,
+              "page": {
+                "width": 793.7007874015749,
+                "height": 1122.5196850393702
+              },
+              "pages": [
+                {
+                  "index": 0,
+                  "x": 0,
+                  "y": 0,
+                  "width": 254.54545454545453,
+                  "height": 360
+                },
+                {
+                  "index": 1,
+                  "x": 286.5454545454545,
+                  "y": 0,
+                  "width": 254.54545454545453,
+                  "height": 360
+                },
+                {
+                  "index": 2,
+                  "x": 573.090909090909,
+                  "y": 0,
+                  "width": 254.54545454545453,
+                  "height": 360
+                },
+                {
+                  "index": 3,
+                  "x": 859.6363636363635,
+                  "y": 0,
+                  "width": 254.54545454545453,
+                  "height": 360
+                }
+              ],
+              "extent": {
+                "width": 1114.181818181818,
+                "height": 360
+              }
+            }
+          }
+        },
+        {
+          "name": "Tonic Sol-fa uses the same complete-page Fit Width system",
+          "status": "PASS",
+          "details": {
+            "area": {
+              "left": 250,
+              "right": 1366
+            },
+            "page": {
+              "left": 289,
+              "right": 1326.982666015625,
+              "width": 1037.982666015625,
+              "height": 1468.0233154296875
+            },
+            "pageCount": 1
+          }
+        }
+      ],
+      "screenshot": "build29-viewport-1366x768-1x.png",
+      "status": "PASS"
+    },
+    {
+      "scenario": {
+        "width": 1366,
+        "height": 768,
+        "scale": 1.25
+      },
+      "browser": {
+        "innerWidth": 1367,
+        "innerHeight": 631,
+        "devicePixelRatio": 1.25,
+        "app": {
+          "left": 0,
+          "right": 1367.2000732421875,
+          "top": 0,
+          "bottom": 631.2000122070312,
+          "width": 1367.2000732421875,
+          "height": 631.2000122070312
+        },
+        "area": {
+          "left": 250,
+          "right": 1367.2000732421875,
+          "top": 193,
+          "bottom": 603.2000122070312,
+          "width": 1117.2000732421875,
+          "height": 410.20001220703125
+        }
+      },
+      "checks": [
+        {
+          "name": "desktop shell remains inside viewport",
+          "status": "PASS",
+          "details": {
+            "innerWidth": 1367,
+            "innerHeight": 631,
+            "devicePixelRatio": 1.25,
+            "app": {
+              "left": 0,
+              "right": 1367.2000732421875,
+              "top": 0,
+              "bottom": 631.2000122070312,
+              "width": 1367.2000732421875,
+              "height": 631.2000122070312
+            },
+            "area": {
+              "left": 250,
+              "right": 1367.2000732421875,
+              "top": 193,
+              "bottom": 603.2000122070312,
+              "width": 1117.2000732421875,
+              "height": 410.20001220703125
+            }
+          }
+        },
+        {
+          "name": "Fit Width shows a complete page without horizontal workspace overflow",
+          "status": "PASS",
+          "details": {
+            "area": {
+              "left": 250,
+              "right": 1367.2000732421875,
+              "width": 1117.2000732421875
+            },
+            "page": {
+              "left": 289.20001220703125,
+              "right": 1328.1990356445312,
+              "width": 1038.9990234375,
+              "height": 1469.43359375
+            },
+            "scrollWidth": 1087,
+            "clientWidth": 1087,
+            "zoom": 1.3090575396825395
+          }
+        },
+        {
+          "name": "Fit Page shows the complete portrait page",
+          "status": "PASS",
+          "details": {
+            "area": {
+              "left": 250,
+              "right": 1367.2000732421875,
+              "top": 193,
+              "bottom": 603.2000122070312,
+              "width": 1117.2000732421875,
+              "height": 410.20001220703125
+            },
+            "page": {
+              "left": 680.6000366210938,
+              "right": 936.5594177246094,
+              "top": 217,
+              "bottom": 578.9976501464844,
+              "width": 255.95938110351562,
+              "height": 361.9976501464844
+            },
+            "zoom": 0.3224887766554433
+          }
+        },
+        {
+          "name": "Continuous mode casts a long score onto multiple physical pages",
+          "status": "PASS",
+          "details": {
+            "activeView": "staff",
+            "zoomMode": "page",
+            "zoom": 0.3224887766554433,
+            "pageLayoutMode": "continuous",
+            "currentPage": 1,
+            "pageCount": 4,
+            "layout": {
+              "mode": "continuous",
+              "zoom": 0.3224887766554433,
+              "gap": 32,
+              "page": {
+                "width": 793.7007874015749,
+                "height": 1122.5196850393702
+              },
+              "pages": [
+                {
+                  "index": 0,
+                  "x": 0,
+                  "y": 0,
+                  "width": 255.95959595959596,
+                  "height": 362
+                },
+                {
+                  "index": 1,
+                  "x": 0,
+                  "y": 394,
+                  "width": 255.95959595959596,
+                  "height": 362
+                },
+                {
+                  "index": 2,
+                  "x": 0,
+                  "y": 788,
+                  "width": 255.95959595959596,
+                  "height": 362
+                },
+                {
+                  "index": 3,
+                  "x": 0,
+                  "y": 1182,
+                  "width": 255.95959595959596,
+                  "height": 362
+                }
+              ],
+              "extent": {
+                "width": 255.95959595959596,
+                "height": 1544
+              }
+            }
+          }
+        },
+        {
+          "name": "Spread mode creates two-page rows",
+          "status": "PASS",
+          "details": {
+            "activeView": "staff",
+            "zoomMode": "page",
+            "zoom": 0.3224887766554433,
+            "pageLayoutMode": "spread",
+            "currentPage": 1,
+            "pageCount": 4,
+            "layout": {
+              "mode": "spread",
+              "zoom": 0.3224887766554433,
+              "gap": 32,
+              "page": {
+                "width": 793.7007874015749,
+                "height": 1122.5196850393702
+              },
+              "pages": [
+                {
+                  "index": 0,
+                  "x": 0,
+                  "y": 0,
+                  "width": 255.95959595959596,
+                  "height": 362
+                },
+                {
+                  "index": 1,
+                  "x": 287.95959595959596,
+                  "y": 0,
+                  "width": 255.95959595959596,
+                  "height": 362
+                },
+                {
+                  "index": 2,
+                  "x": 0,
+                  "y": 394,
+                  "width": 255.95959595959596,
+                  "height": 362
+                },
+                {
+                  "index": 3,
+                  "x": 287.95959595959596,
+                  "y": 394,
+                  "width": 255.95959595959596,
+                  "height": 362
+                }
+              ],
+              "extent": {
+                "width": 543.9191919191919,
+                "height": 756
+              }
+            }
+          }
+        },
+        {
+          "name": "Horizontal mode places pages on one horizontal sequence",
+          "status": "PASS",
+          "details": {
+            "activeView": "staff",
+            "zoomMode": "page",
+            "zoom": 0.3224887766554433,
+            "pageLayoutMode": "horizontal",
+            "currentPage": 3,
+            "pageCount": 4,
+            "layout": {
+              "mode": "horizontal",
+              "zoom": 0.3224887766554433,
+              "gap": 32,
+              "page": {
+                "width": 793.7007874015749,
+                "height": 1122.5196850393702
+              },
+              "pages": [
+                {
+                  "index": 0,
+                  "x": 0,
+                  "y": 0,
+                  "width": 255.95959595959596,
+                  "height": 362
+                },
+                {
+                  "index": 1,
+                  "x": 287.95959595959596,
+                  "y": 0,
+                  "width": 255.95959595959596,
+                  "height": 362
+                },
+                {
+                  "index": 2,
+                  "x": 575.9191919191919,
+                  "y": 0,
+                  "width": 255.95959595959596,
+                  "height": 362
+                },
+                {
+                  "index": 3,
+                  "x": 863.8787878787879,
+                  "y": 0,
+                  "width": 255.95959595959596,
+                  "height": 362
+                }
+              ],
+              "extent": {
+                "width": 1119.8383838383838,
+                "height": 362
+              }
+            }
+          }
+        },
+        {
+          "name": "Tonic Sol-fa uses the same complete-page Fit Width system",
+          "status": "PASS",
+          "details": {
+            "area": {
+              "left": 250,
+              "right": 1367.2000732421875
+            },
+            "page": {
+              "left": 289.20001220703125,
+              "right": 1328.1990356445312,
+              "width": 1038.9990234375,
+              "height": 1469.43359375
+            },
+            "pageCount": 1
+          }
+        }
+      ],
+      "screenshot": "build29-viewport-1366x768-1_25x.png",
+      "status": "PASS"
+    },
+    {
+      "scenario": {
+        "width": 1920,
+        "height": 1080,
+        "scale": 1
+      },
+      "browser": {
+        "innerWidth": 1920,
+        "innerHeight": 941,
+        "devicePixelRatio": 1,
+        "app": {
+          "left": 0,
+          "right": 1920,
+          "top": 0,
+          "bottom": 941,
+          "width": 1920,
+          "height": 941
+        },
+        "area": {
+          "left": 250,
+          "right": 1920,
+          "top": 193,
+          "bottom": 913,
+          "width": 1670,
+          "height": 720
+        }
+      },
+      "checks": [
+        {
+          "name": "desktop shell remains inside viewport",
+          "status": "PASS",
+          "details": {
+            "innerWidth": 1920,
+            "innerHeight": 941,
+            "devicePixelRatio": 1,
+            "app": {
+              "left": 0,
+              "right": 1920,
+              "top": 0,
+              "bottom": 941,
+              "width": 1920,
+              "height": 941
+            },
+            "area": {
+              "left": 250,
+              "right": 1920,
+              "top": 193,
+              "bottom": 913,
+              "width": 1670,
+              "height": 720
+            }
+          }
+        },
+        {
+          "name": "Fit Width shows a complete page without horizontal workspace overflow",
+          "status": "PASS",
+          "details": {
+            "area": {
+              "left": 250,
+              "right": 1920,
+              "width": 1670
+            },
+            "page": {
+              "left": 289,
+              "right": 1880.9732666015625,
+              "width": 1591.9732666015625,
+              "height": 2251.53466796875
+            },
+            "scrollWidth": 1640,
+            "clientWidth": 1640,
+            "zoom": 2.0057936507936507
+          }
+        },
+        {
+          "name": "Fit Page shows the complete portrait page",
+          "status": "PASS",
+          "details": {
+            "area": {
+              "left": 250,
+              "right": 1920,
+              "top": 193,
+              "bottom": 913,
+              "width": 1670,
+              "height": 720
+            },
+            "page": {
+              "left": 847,
+              "right": 1322.1435546875,
+              "top": 217,
+              "bottom": 888.99755859375,
+              "width": 475.1435546875,
+              "height": 671.99755859375
+            },
+            "zoom": 0.5986531986531985
+          }
+        },
+        {
+          "name": "Continuous mode casts a long score onto multiple physical pages",
+          "status": "PASS",
+          "details": {
+            "activeView": "staff",
+            "zoomMode": "page",
+            "zoom": 0.5986531986531985,
+            "pageLayoutMode": "continuous",
+            "currentPage": 1,
+            "pageCount": 4,
+            "layout": {
+              "mode": "continuous",
+              "zoom": 0.5986531986531985,
+              "gap": 32,
+              "page": {
+                "width": 793.7007874015749,
+                "height": 1122.5196850393702
+              },
+              "pages": [
+                {
+                  "index": 0,
+                  "x": 0,
+                  "y": 0,
+                  "width": 475.1515151515151,
+                  "height": 672
+                },
+                {
+                  "index": 1,
+                  "x": 0,
+                  "y": 704,
+                  "width": 475.1515151515151,
+                  "height": 672
+                },
+                {
+                  "index": 2,
+                  "x": 0,
+                  "y": 1408,
+                  "width": 475.1515151515151,
+                  "height": 672
+                },
+                {
+                  "index": 3,
+                  "x": 0,
+                  "y": 2112,
+                  "width": 475.1515151515151,
+                  "height": 672
+                }
+              ],
+              "extent": {
+                "width": 475.1515151515151,
+                "height": 2784
+              }
+            }
+          }
+        },
+        {
+          "name": "Spread mode creates two-page rows",
+          "status": "PASS",
+          "details": {
+            "activeView": "staff",
+            "zoomMode": "page",
+            "zoom": 0.5986531986531985,
+            "pageLayoutMode": "spread",
+            "currentPage": 1,
+            "pageCount": 4,
+            "layout": {
+              "mode": "spread",
+              "zoom": 0.5986531986531985,
+              "gap": 32,
+              "page": {
+                "width": 793.7007874015749,
+                "height": 1122.5196850393702
+              },
+              "pages": [
+                {
+                  "index": 0,
+                  "x": 0,
+                  "y": 0,
+                  "width": 475.1515151515151,
+                  "height": 672
+                },
+                {
+                  "index": 1,
+                  "x": 507.1515151515151,
+                  "y": 0,
+                  "width": 475.1515151515151,
+                  "height": 672
+                },
+                {
+                  "index": 2,
+                  "x": 0,
+                  "y": 704,
+                  "width": 475.1515151515151,
+                  "height": 672
+                },
+                {
+                  "index": 3,
+                  "x": 507.1515151515151,
+                  "y": 704,
+                  "width": 475.1515151515151,
+                  "height": 672
+                }
+              ],
+              "extent": {
+                "width": 982.3030303030303,
+                "height": 1376
+              }
+            }
+          }
+        },
+        {
+          "name": "Horizontal mode places pages on one horizontal sequence",
+          "status": "PASS",
+          "details": {
+            "activeView": "staff",
+            "zoomMode": "page",
+            "zoom": 0.585290404040404,
+            "pageLayoutMode": "horizontal",
+            "currentPage": 2,
+            "pageCount": 4,
+            "layout": {
+              "mode": "horizontal",
+              "zoom": 0.585290404040404,
+              "gap": 32,
+              "page": {
+                "width": 793.7007874015749,
+                "height": 1122.5196850393702
+              },
+              "pages": [
+                {
+                  "index": 0,
+                  "x": 0,
+                  "y": 0,
+                  "width": 464.54545454545456,
+                  "height": 657
+                },
+                {
+                  "index": 1,
+                  "x": 496.54545454545456,
+                  "y": 0,
+                  "width": 464.54545454545456,
+                  "height": 657
+                },
+                {
+                  "index": 2,
+                  "x": 993.0909090909091,
+                  "y": 0,
+                  "width": 464.54545454545456,
+                  "height": 657
+                },
+                {
+                  "index": 3,
+                  "x": 1489.6363636363637,
+                  "y": 0,
+                  "width": 464.54545454545456,
+                  "height": 657
+                }
+              ],
+              "extent": {
+                "width": 1954.1818181818182,
+                "height": 657
+              }
+            }
+          }
+        },
+        {
+          "name": "Tonic Sol-fa uses the same complete-page Fit Width system",
+          "status": "PASS",
+          "details": {
+            "area": {
+              "left": 250,
+              "right": 1920
+            },
+            "page": {
+              "left": 289,
+              "right": 1880.9732666015625,
+              "width": 1591.9732666015625,
+              "height": 2251.53466796875
+            },
+            "pageCount": 1
+          }
+        }
+      ],
+      "screenshot": "build29-viewport-1920x1080-1x.png",
+      "status": "PASS"
+    },
+    {
+      "scenario": {
+        "width": 1920,
+        "height": 1080,
+        "scale": 1.5
+      },
+      "browser": {
+        "innerWidth": 1920,
+        "innerHeight": 941,
+        "devicePixelRatio": 1.5,
+        "app": {
+          "left": 0,
+          "right": 1920,
+          "top": 0,
+          "bottom": 941.3333740234375,
+          "width": 1920,
+          "height": 941.3333740234375
+        },
+        "area": {
+          "left": 250,
+          "right": 1920,
+          "top": 193,
+          "bottom": 913.3333740234375,
+          "width": 1670,
+          "height": 720.3333740234375
+        }
+      },
+      "checks": [
+        {
+          "name": "desktop shell remains inside viewport",
+          "status": "PASS",
+          "details": {
+            "innerWidth": 1920,
+            "innerHeight": 941,
+            "devicePixelRatio": 1.5,
+            "app": {
+              "left": 0,
+              "right": 1920,
+              "top": 0,
+              "bottom": 941.3333740234375,
+              "width": 1920,
+              "height": 941.3333740234375
+            },
+            "area": {
+              "left": 250,
+              "right": 1920,
+              "top": 193,
+              "bottom": 913.3333740234375,
+              "width": 1670,
+              "height": 720.3333740234375
+            }
+          }
+        },
+        {
+          "name": "Fit Width shows a complete page without horizontal workspace overflow",
+          "status": "PASS",
+          "details": {
+            "area": {
+              "left": 250,
+              "right": 1920,
+              "width": 1670
+            },
+            "page": {
+              "left": 289.5,
+              "right": 1880.494384765625,
+              "width": 1590.994384765625,
+              "height": 2250.110107421875
+            },
+            "scrollWidth": 1639,
+            "clientWidth": 1639,
+            "zoom": 2.00453373015873
+          }
+        },
+        {
+          "name": "Fit Page shows the complete portrait page",
+          "status": "PASS",
+          "details": {
+            "area": {
+              "left": 250,
+              "right": 1920,
+              "top": 193,
+              "bottom": 913.3333740234375,
+              "width": 1670,
+              "height": 720.3333740234375
+            },
+            "page": {
+              "left": 847,
+              "right": 1322.1497497558594,
+              "top": 217,
+              "bottom": 888.9945068359375,
+              "width": 475.1497497558594,
+              "height": 671.9945068359375
+            },
+            "zoom": 0.5986531986531985
+          }
+        },
+        {
+          "name": "Continuous mode casts a long score onto multiple physical pages",
+          "status": "PASS",
+          "details": {
+            "activeView": "staff",
+            "zoomMode": "page",
+            "zoom": 0.5986531986531985,
+            "pageLayoutMode": "continuous",
+            "currentPage": 1,
+            "pageCount": 4,
+            "layout": {
+              "mode": "continuous",
+              "zoom": 0.5986531986531985,
+              "gap": 32,
+              "page": {
+                "width": 793.7007874015749,
+                "height": 1122.5196850393702
+              },
+              "pages": [
+                {
+                  "index": 0,
+                  "x": 0,
+                  "y": 0,
+                  "width": 475.1515151515151,
+                  "height": 672
+                },
+                {
+                  "index": 1,
+                  "x": 0,
+                  "y": 704,
+                  "width": 475.1515151515151,
+                  "height": 672
+                },
+                {
+                  "index": 2,
+                  "x": 0,
+                  "y": 1408,
+                  "width": 475.1515151515151,
+                  "height": 672
+                },
+                {
+                  "index": 3,
+                  "x": 0,
+                  "y": 2112,
+                  "width": 475.1515151515151,
+                  "height": 672
+                }
+              ],
+              "extent": {
+                "width": 475.1515151515151,
+                "height": 2784
+              }
+            }
+          }
+        },
+        {
+          "name": "Spread mode creates two-page rows",
+          "status": "PASS",
+          "details": {
+            "activeView": "staff",
+            "zoomMode": "page",
+            "zoom": 0.5986531986531985,
+            "pageLayoutMode": "spread",
+            "currentPage": 1,
+            "pageCount": 4,
+            "layout": {
+              "mode": "spread",
+              "zoom": 0.5986531986531985,
+              "gap": 32,
+              "page": {
+                "width": 793.7007874015749,
+                "height": 1122.5196850393702
+              },
+              "pages": [
+                {
+                  "index": 0,
+                  "x": 0,
+                  "y": 0,
+                  "width": 475.1515151515151,
+                  "height": 672
+                },
+                {
+                  "index": 1,
+                  "x": 507.1515151515151,
+                  "y": 0,
+                  "width": 475.1515151515151,
+                  "height": 672
+                },
+                {
+                  "index": 2,
+                  "x": 0,
+                  "y": 704,
+                  "width": 475.1515151515151,
+                  "height": 672
+                },
+                {
+                  "index": 3,
+                  "x": 507.1515151515151,
+                  "y": 704,
+                  "width": 475.1515151515151,
+                  "height": 672
+                }
+              ],
+              "extent": {
+                "width": 982.3030303030303,
+                "height": 1376
+              }
+            }
+          }
+        },
+        {
+          "name": "Horizontal mode places pages on one horizontal sequence",
+          "status": "PASS",
+          "details": {
+            "activeView": "staff",
+            "zoomMode": "page",
+            "zoom": 0.585290404040404,
+            "pageLayoutMode": "horizontal",
+            "currentPage": 2,
+            "pageCount": 4,
+            "layout": {
+              "mode": "horizontal",
+              "zoom": 0.585290404040404,
+              "gap": 32,
+              "page": {
+                "width": 793.7007874015749,
+                "height": 1122.5196850393702
+              },
+              "pages": [
+                {
+                  "index": 0,
+                  "x": 0,
+                  "y": 0,
+                  "width": 464.54545454545456,
+                  "height": 657
+                },
+                {
+                  "index": 1,
+                  "x": 496.54545454545456,
+                  "y": 0,
+                  "width": 464.54545454545456,
+                  "height": 657
+                },
+                {
+                  "index": 2,
+                  "x": 993.0909090909091,
+                  "y": 0,
+                  "width": 464.54545454545456,
+                  "height": 657
+                },
+                {
+                  "index": 3,
+                  "x": 1489.6363636363637,
+                  "y": 0,
+                  "width": 464.54545454545456,
+                  "height": 657
+                }
+              ],
+              "extent": {
+                "width": 1954.1818181818182,
+                "height": 657
+              }
+            }
+          }
+        },
+        {
+          "name": "Tonic Sol-fa uses the same complete-page Fit Width system",
+          "status": "PASS",
+          "details": {
+            "area": {
+              "left": 250,
+              "right": 1920
+            },
+            "page": {
+              "left": 289.5,
+              "right": 1880.494384765625,
+              "width": 1590.994384765625,
+              "height": 2250.110107421875
+            },
+            "pageCount": 1
+          }
+        }
+      ],
+      "screenshot": "build29-viewport-1920x1080-1_5x.png",
+      "status": "PASS"
+    }
+  ],
+  "checks": 28,
+  "passed": 28,
+  "status": "PASS"
+}

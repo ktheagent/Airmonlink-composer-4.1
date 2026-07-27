@@ -1,0 +1,103 @@
+{
+  "product": "Airmonlink Composer 3",
+  "version": "1.1.9",
+  "buildNumber": 29,
+  "buildVersion": "1.1.9.29",
+  "checkpointStatus": "LOCAL SOURCE-VALIDATED CHECKPOINT \u2014 NOT FINAL",
+  "githubEmbargoStatus": "ACTIVE",
+  "sourceBaseline": {
+    "archive": "Airmonlink-Composer-1.1.8-Build28-Source-Validated-Release-Blocked (1).zip",
+    "verifiedSha256": "7af5063a8c775dccc9d1715e74208b3122d4884f0ab8ad6588c91f84a7566f7d"
+  },
+  "rootCauseRepairs": [
+    "Replaced fixed 1120x780 half-page geometry with physical page dimensions and printable content boxes.",
+    "Replaced transform-only page zoom compensation with scaled layout boxes.",
+    "Unified Staff and Tonic Sol-fa rendering under one physical-page slot system.",
+    "Added authoritative page, viewport, zoom, margin, pagination, placement, and scroll calculations.",
+    "Added Fit Width, Fit Page, Actual Size, custom zoom, Ctrl-wheel zoom, and page navigation.",
+    "Added continuous, single-page, spread, and horizontal layout modes.",
+    "Added ResizeObserver and VisualViewport reflow with scroll-anchor preservation.",
+    "Contained oversized ribbon/application shell width so pages stay centered in the viewport."
+  ],
+  "validation": {
+    "javascriptSyntax": {
+      "status": "PASS",
+      "files": 62
+    },
+    "automatedTests": {
+      "status": "PASS",
+      "passed": 210,
+      "total": 210
+    },
+    "performanceGates": {
+      "status": "PASS",
+      "passed": 6,
+      "total": 6
+    },
+    "previewGeneration": {
+      "status": "PASS"
+    },
+    "browserChecks": {
+      "status": "PASS",
+      "passed": 46,
+      "total": 46
+    },
+    "viewportMatrix": {
+      "status": "PASS",
+      "passed": 28,
+      "total": 28,
+      "scenarios": [
+        "1366x768 at 100%",
+        "1366x768 at 125%",
+        "1920x1080 at 100%",
+        "1920x1080 at 150%"
+      ]
+    },
+    "staffVisualEvidence": {
+      "status": "PASS",
+      "evidence": "validation/composer3-browser.png"
+    },
+    "tonicSolfaVisualEvidence": {
+      "status": "PASS",
+      "evidence": "validation/composer3-solfa.png"
+    },
+    "pdfGenerationAndRenderInspection": {
+      "status": "PASS",
+      "evidence": "validation/composer3-print.pdf"
+    },
+    "canonicalFullValidation": {
+      "status": "PASS",
+      "log": "validation/build29-full-validation.log"
+    },
+    "postCheckpointSourceValidation": {
+      "status": "PASS",
+      "command": "npm run validate",
+      "automatedTests": {
+        "passed": 210,
+        "total": 210
+      },
+      "log": "validation/build29-final-source-validation.log"
+    }
+  },
+  "dependencyRestore": {
+    "status": "BLOCKED",
+    "reason": "npm registry DNS resolution failed with EAI_AGAIN.",
+    "evidence": "validation/build29-npm-registry.log"
+  },
+  "notPerformed": [
+    "Clean npm ci for Build 29",
+    "Build 29 Electron clean launch from a freshly restored dependency tree",
+    "Build 29 Windows Setup and Portable compilation",
+    "Windows PE metadata and executable checksum verification",
+    "Windows installation, startup, upgrade, file association, uninstall, and user-data preservation tests",
+    "Code-signing and trust verification",
+    "Human Windows visual matrix",
+    "Physical audio, MIDI, and printer testing",
+    "Best-Version Exit Gate"
+  ],
+  "removedStaleGeneratedFiles": [
+    "validation/build28-dependency-restore.log",
+    "validation/build28-validation-summary.json"
+  ],
+  "generatedUtc": "2026-07-26T23:59:11+00:00"
+}
