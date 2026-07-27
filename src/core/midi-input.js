@@ -120,7 +120,7 @@
     }
 
     start(timestampMs = 0) {
-      this.startedAtMs = Numer(timestampMs) || 0;
+      this.startedAtMs = Number(timestampMs) || 0;
       this.recording = true;
       this.active.clear();
       this.sustainedNotes.clear();
@@ -160,7 +160,7 @@
     noteOff(midi, timestampMs) {
       const active = this.active.get(Number(midi));
       if (!active || !this.score || !this.partId) return [];
-      this.active.delete(Number(midi);
+      this.active.delete(Number(midi));
       const duration = Math.max(this.minDuration, this.beatAt(timestampMs) - active.start);
       const event = model.addNote(this.score, this.partId, {
         midi: Number(midi),
