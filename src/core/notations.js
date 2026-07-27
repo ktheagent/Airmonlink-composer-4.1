@@ -2,190 +2,176 @@
   const model = root.AirmonScoreModel || (typeof require === 'function' ? require('./score-model') : null);
   const api = factory(model);
   if (typeof module === 'object' && module.exports) module.exports = api;
-  root.AirmonMidiInput = api;
+  root.AirmonNotations = api;
 })(typeof globalThis !== 'undefined' ? globalThis : this, function (model) {
   'use strict';
 
-  function decodeMidiMessage(data) {
-    const bytes = Array.from(data || []);
-    const status = Number(bytes[0]) || 0;
-    const type = status & 0xF0;
-    const channel = status & 0x0F;
-    const note = Number(bytes[1]) || 0;
-    const value = Number(bytes[2]) || 0;
-    if (type === 0x90 && value > 0) return { type: 'noteon', channel, note, velocity: value };
-    if (type === 0x80 || (type === 0x90 && value === 0)) return { type: 'noteoff', channel, note, velocity: value };
-    if (type === 0xB0 && note === 64) return { type: 'sustain', channel, value, down: value >= 64 };
-    return { type: 'other', channel, data: bytes };
+  function noteEntries(score, entries) {
+    const supplied = Array.isArray(entries) ? entries : [];
+    return supplied.map(entry => {
+      if (entry?.event && entry?.part) return entry;
+      const ref = model.findEvent(score, entry?.eventId || entry?.id || entry);
+      return ref ? { part: ref.part, event: ref.event } : null;
+    }).filter(entry => entry?.event?.type === 'note').sort((a, b) => a.event.start - b.event.start || a.event.midi - b.event.midi);
   }
 
-  class StepTimeMidiInput {
-    constructor(score, options = {}) {
-      this.score = score;
-      this.partId = options.partId || score?.parts?.[0]?.id || null;
-      this.voice = Math.max(1, Math.min(4, Number(options.voice) || 1));
-      this.staff = options.staff || null;
-      this.duration = Math.max(.0625, Number(options.duration) || 1);
-      this.cursor = Math.max(0, Number(options.cursor) || 0);
-      this.activeNotes = new Set();
-      this.currentChordStart = null;
-      this.sustain = false;
-      this.onEntered = typeof options.onEntered === 'function' ? options.onEntered : null;
-    }
-
-    configure(options = {}) {
-      if (options.score) this.score = options.score;
-      if (options.partId) this.partId = options.partId;
-      if (options.voice != null) this.voice = Math.max(1, Math.min(4, Number(options.voice) || 1));
-      if ('staff' in options) this.staff = options.staff || null;
-      if (options.duration != null) this.duration = Math.max(.0625, Number(options.duration) || 1);
-      if (options.cursor != null) this.cursor = Math.max(0, Number(options.cursor) || 0);
-      return this;
-    }
-
-    handle(data) {
-      const message = data?.data ? decodeMidiMessage(data.data) : decodeMidiMessage(data);
-      if (message.type === 'sustain') { this.sustain = message.down; return { message, entered: [] }; }
-      if (message.type === 'noteon') return { message, entered: this.noteOn(message.note, message.velocity) };
-      if (message.type === 'noteoff') { this.noteOff(message.note); return { message, entered: [] }; }
-      return { message, entered: [] };
-    }
-
-    noteOn(midi, velocity = 88) {
-      if (!this.score || !this.partId) throw new Error('Select a score part before MIDI step entry.');
-      if (!this.activeNotes.size) this.currentChordStart = this.cursor;
-      const start = this.currentChordStart == null ? this.cursor : this.currentChordStart;
-      const part = this.score.parts.find(item => item.id === this.partId);
-      const anchor = part?.events.find(item => item.type === 'note' && item.generatedBy !== 'gap-fill' && Math.abs(item.start - start) < 1e-8 && Math.abs(item.duration - this.duration) < 1e-8 && (item.voice || 1) === this.voice && (item.staff || null) === (this.staff || null));
-      const event = anchor
-        ? model.addChordTone(this.score, this.partId, anchor.id, Number(midi), { velocity: Math.max(1, Math.min(127, Number(velocity) || 88)), inputSource: 'midi-step' })
-        : model.addNote(this.score, this.partId, { midi: Number(midi), velocity: Math.max(1, Math.min(127, Number(velocity) || 88)), start, duration: this.duration, voice: this.voice, staff: this.staff, allowChord: true, inputSource: 'midi-step' });
-      this.activeNotes.add(Number(midi));
-      const entered = [event];
-      if (this.onEntered) this.onEntered(entered, this);
-      return entered;
-    }
-
-    noteOff(midi) {
-      this.activeNotes.delete(Number(midi));
-      if (!this.activeNotes.size && !this.sustain) {
-        this.cursor = Number(this.currentChordStart == null ? this.cursor : this.currentChordStart) + this.duration;
-        this.currentChordStart = null;
-      }
-      return this.cursor;
-    }
-
-    releaseSustain() {
-      this.sustain = false;
-      if (!this.activeNotes.size && this.currentChordStart != null) {
-        this.cursor = this.currentChordStart + this.duration;
-        this.currentChordStart = null;
-      }
-      return this.cursor;
-    }
+  function createTie(score, entries, options = {}) {
+    const notes = noteEntries(score, entries);
+    if (notes.length !== 2) throw new Error('Select exactly two notes to create a tie.');
+    if (notes[0].part.id !== notes[1].part.id) throw new Error('A tie must remain within one part.');
+    if ((notes[0].event.voice || 1) !== (notes[1].event.voice || 1)) throw new Error('A tie must remain in the same layer.');
+    if ((notes[0].event.staff || null) !== (notes[1].event.staff || null)) throw new Error('Use cross-staff notation before tying notes on different staves.');
+    return model.addTie(score, notes[0].event.id, notes[1].event.id, options);
   }
 
+  function createSlur(score, entries, options = {}) {
+    const notes = noteEntries(score, entries);
+    if (notes.length < 2) throw new Error('Select two or more notes to create a slur.');
+    if (notes[0].part.id !== notes.at(-1).part.id) throw new Error('A slur must remain within one part.');
+    return model.addSlur(score, notes[0].event.id, notes.at(-1).event.id, options);
+  }
 
-  class RealTimeMidiInput {
-    constructor(score, options = {}) {
-      this.score = score;
-      this.partId = options.partId || score?.parts?.[0]?.id || null;
-      this.voice = Math.max(1, Math.min(4, Number(options.voice) || 1));
-      this.staff = options.staff || null;
-      this.tempo = Math.max(20, Math.min(400, Number(options.tempo) || Number(score?.settings?.tempo) || 120));
-      this.startBeat = Math.max(0, Number(options.startBeat) || 0);
-      this.startedAtMs = 0;
-      this.recording = false;
-      this.active = new Map();
-      this.sustain = false;
-      this.sustainedNotes = new Set();
-      this.minDuration = Math.max(.03125, Number(options.minDuration) || .0625);
-      this.onEntered = typeof options.onEntered === 'function' ? options.onEntered : null;
-    }
-
-    configure(options = {}) {
-      if (options.score) this.score = options.score;
-      if (options.partId) this.partId = options.partId;
-      if (options.voice != null) this.voice = Math.max(1, Math.min(4, Number(options.voice) || 1));
-      if ('staff' in options) this.staff = options.staff || null;
-      if (options.tempo != null) this.tempo = Math.max(20, Math.min(400, Number(options.tempo) || 120));
-      if (options.startBeat != null) this.startBeat = Math.max(0, Number(options.startBeat) || 0);
-      if (options.minDuration != null) this.minDuration = Math.max(.03125, Number(options.minDuration) || .0625);
-      return this;
-    }
-
-    beatAt(timestampMs) {
-      const elapsedSeconds = Math.max(0, (Number(timestampMs) - this.startedAtMs) / 1000);
-      return this.startBeat + elapsedSeconds * this.tempo / 60;
-    }
-
-    start(timestampMs = 0) {
-      this.startedAtMs = Number(timestampMs) || 0;
-      this.recording = true;
-      this.active.clear();
-      this.sustainedNotes.clear();
-      return this;
-    }
-
-    handle(data, timestampMs = 0) {
-      const message = data?.data ? decodeMidiMessage(data.data) : decodeMidiMessage(data);
-      if (!this.recording) return { message, entered: [] };
-      if (message.type === 'sustain') {
-        const wasDown = this.sustain;
-        this.sustain = message.down;
-        const entered = [];
-        if (wasDown && !this.sustain) {
-          for (const midi of Array.from(this.sustainedNotes)) entered.push(...this.noteOff(midi, timestampMs));
-          this.sustainedNotes.clear();
+  function removeSpanners(score, entries, type = null) {
+    const ids = new Set(noteEntries(score, entries).map(entry => entry.event.id));
+    const before = (score.spanners || []).length;
+    score.spanners = (score.spanners || []).filter(spanner => {
+      if (type && spanner.type !== type) return true;
+      return !(ids.has(spanner.startEventId) || ids.has(spanner.endEventId));
+    });
+    if (score.spanners.length !== before) {
+      for (const id of ids) {
+        const ref = model.findEvent(score, id);
+        if (!ref?.event) continue;
+        if (!type || type === 'tie') {
+          ref.event.tieStart = false;
+          ref.event.tieStop = false;
         }
-        return { message, entered };
-      }
-      if (message.type === 'noteon') {
-        this.active.set(Number(message.note), {
-          start: this.beatAt(timestampMs),
-          velocity: Math.max(1, Math.min(127, Number(message.velocity) || 88))
-        });
-        return { message, entered: [] };
-      }
-      if (message.type === 'noteoff') {
-        if (this.sustain) {
-          this.sustainedNotes.add(Number(message.note));
-          return { message, entered: [] };
+        if (!type || type === 'slur') {
+          ref.event.slurStart = false;
+          ref.event.slurStop = false;
+          ref.event.slurNumber = null;
         }
-        return { message, entered: this.noteOff(message.note, timestampMs) };
       }
-      return { message, entered: [] };
+      model.normalizeSpanners(score);
+      model.touch(score);
     }
-
-    noteOff(midi, timestampMs) {
-      const active = this.active.get(Number(midi));
-      if (!active || !this.score || !this.partId) return [];
-      this.active.delete(Number(midi));
-      const duration = Math.max(this.minDuration, this.beatAt(timestampMs) - active.start);
-      const event = model.addNote(this.score, this.partId, {
-        midi: Number(midi),
-        velocity: active.velocity,
-        start: active.start,
-        duration,
-        voice: this.voice,
-        staff: this.staff,
-        allowChord: true,
-        inputSource: 'midi-realtime'
-      });
-      const entered = [event];
-      if (this.onEntered) this.onEntered(entered, this);
-      return entered;
-    }
-
-    stop(timestampMs = 0) {
-      const entered = [];
-      for (const midi of Array.from(this.active.keys())) entered.push(...this.noteOff(midi, timestampMs));
-      this.recording = false;
-      this.sustain = false;
-      this.sustainedNotes.clear();
-      return entered;
-    }
+    return before - score.spanners.length;
   }
 
-  return { decodeMidiMessage, StepTimeMidiInput, RealTimeMidiInput };
+  function flipSpanners(score, entries, type = null) {
+    const ids = new Set(noteEntries(score, entries).map(entry => entry.event.id));
+    let count = 0;
+    for (const spanner of score.spanners || []) {
+      if (type && spanner.type !== type) continue;
+      if (!ids.has(spanner.startEventId) && !ids.has(spanner.endEventId)) continue;
+      spanner.direction = spanner.direction === 'above' ? 'below' : 'above';
+      count += 1;
+    }
+    if (count) model.touch(score);
+    return count;
+  }
+
+  function resetSpannerPositions(score, entries, type = null) {
+    const ids = new Set(noteEntries(score, entries).map(entry => entry.event.id));
+    let count = 0;
+    for (const spanner of score.spanners || []) {
+      if (type && spanner.type !== type) continue;
+      if (!ids.has(spanner.startEventId) && !ids.has(spanner.endEventId)) continue;
+      spanner.direction = 'auto';
+      spanner.placementOffset = 0;
+      count += 1;
+    }
+    if (count) model.touch(score);
+    return count;
+  }
+
+  function setArticulation(score, entries, articulation, enabled = true) {
+    let count = 0;
+    for (const { event } of noteEntries(score, entries)) {
+      event.articulations = Array.isArray(event.articulations) ? event.articulations : [];
+      const has = event.articulations.includes(articulation);
+      if (enabled && !has) { event.articulations.push(articulation); count += 1; }
+      if (!enabled && has) { event.articulations = event.articulations.filter(item => item !== articulation); count += 1; }
+    }
+    if (count) model.touch(score);
+    return count;
+  }
+
+  function setOrnament(score, entries, ornament, enabled = true) {
+    const name = String(ornament || '').trim();
+    if (!name) throw new Error('Choose an ornament.');
+    let count = 0;
+    for (const { event } of noteEntries(score, entries)) {
+      event.ornaments = Array.isArray(event.ornaments) ? event.ornaments : [];
+      const has = event.ornaments.includes(name);
+      if (enabled && !has) { event.ornaments.push(name); count += 1; }
+      if (!enabled && has) { event.ornaments = event.ornaments.filter(item => item !== name); count += 1; }
+    }
+    if (count) model.touch(score);
+    return count;
+  }
+
+  function setTechnical(score, entries, type, value = '', enabled = true) {
+    const name = String(type || '').trim();
+    if (!name) throw new Error('Choose a technique.');
+    let count = 0;
+    for (const { event } of noteEntries(score, entries)) {
+      event.technical = Array.isArray(event.technical) ? event.technical : [];
+      const index = event.technical.findIndex(item => item?.type === name);
+      if (enabled && index < 0) {
+        event.technical.push({ type: name, value: String(value || '') });
+        count += 1;
+      } else if (enabled && index >= 0 && String(event.technical[index].value || '') !== String(value || '')) {
+        event.technical[index] = { type: name, value: String(value || '') };
+        count += 1;
+      } else if (!enabled && index >= 0) {
+        event.technical.splice(index, 1);
+        count += 1;
+      }
+    }
+    if (count) model.touch(score);
+    return count;
+  }
+
+  function setBeam(score, entries, value = 'auto', number = 1) {
+    const allowed = new Set(['auto', 'begin', 'continue', 'end', 'forward hook', 'backward hook', 'none']);
+    const normalized = allowed.has(String(value)) ? String(value) : 'auto';
+    const beamNumber = Math.max(1, Number(number) || 1);
+    let count = 0;
+    for (const { event } of noteEntries(score, entries)) {
+      event.beam = Array.isArray(event.beam) ? event.beam : [];
+      event.beam = event.beam.filter(item => Number(item?.number) !== beamNumber);
+      if (normalized !== 'auto' && normalized !== 'none') event.beam.push({ number: beamNumber, value: normalized });
+      count += 1;
+    }
+    if (count) model.touch(score);
+    return count;
+  }
+
+  function layerCapacityReport(score, partId, measureIndex, staff = null) {
+    const part = score.parts.find(item => item.id === partId);
+    if (!part) throw new Error('Part not found.');
+    return [1, 2, 3, 4].map(voice => model.layerCapacity(score, part, measureIndex, voice, staff));
+  }
+
+  function erase(score, target) {
+    if (!target) return false;
+    if (target.type === 'tie' || target.type === 'slur') return model.removeSpanner(score, target.id);
+    if (target.type === 'lyric') {
+      const ref = model.findEvent(score, target.noteId);
+      if (!ref) return false;
+      const before = (ref.event.lyrics || []).length;
+      ref.event.lyrics = (ref.event.lyrics || []).filter(item => item.id !== target.id);
+      model.normalizeEventLyrics(ref.event, ref.part);
+      if (before !== ref.event.lyrics.length) { model.touch(score); return true; }
+      return false;
+    }
+    if (target.partId && target.eventId) return model.deleteEvent(score, target.partId, target.eventId);
+    return false;
+  }
+
+  return {
+    noteEntries, createTie, createSlur, removeSpanners, flipSpanners, resetSpannerPositions,
+    setArticulation, setOrnament, setTechnical, setBeam, layerCapacityReport, erase
+  };
 });
